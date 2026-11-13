@@ -77,19 +77,14 @@ button{font:inherit}
   <div class="flower-stage">
    <svg viewBox="0 0 300 360" role="img" aria-label="The exact pink pixel-art tulip supplied by the user" shape-rendering="crispEdges">
     <defs>
-     <clipPath id="realPetal0"><path d="M56 51 C72 48 82 59 94 73 C108 90 117 111 123 136 C129 163 138 185 151 202 C130 202 111 198 94 188 C76 177 66 160 61 139 C56 115 55 81 56 51 Z"/></clipPath>
-<clipPath id="realPetal1"><path d="M91 65 C105 54 118 57 131 70 C146 86 154 111 158 139 C162 164 159 186 151 202 C138 188 126 168 119 146 C111 119 101 89 91 65 Z"/></clipPath>
-<clipPath id="realPetal2"><path d="M128 45 C138 31 161 31 173 45 C188 63 190 89 185 117 C180 150 166 180 150 202 C134 180 120 150 115 117 C110 89 112 63 128 45 Z"/></clipPath>
-<clipPath id="realPetal3"><path d="M209 65 C195 54 182 57 169 70 C154 86 146 111 142 139 C138 164 141 186 149 202 C162 188 174 168 181 146 C189 119 199 89 209 65 Z"/></clipPath>
-<clipPath id="realPetal4"><path d="M244 51 C228 48 218 59 206 73 C192 90 183 111 177 136 C171 163 162 185 149 202 C170 202 189 198 206 188 C224 177 234 160 239 139 C244 115 245 81 244 51 Z"/></clipPath>
-     <mask id="hideBloom"><rect width="300" height="360" fill="white"/><path d="M0 38H300V222H0Z" fill="black"/></mask>
+      <clipPath id="realPetalLeft"><path d="M68 51H90V58H101V69H111V82H119V98H127V116H134V136H140V157H145V179H151V202H132V198H116V192H101V184H89V174H81V160H76V141H72V119H68Z"/></clipPath>
+      <clipPath id="realPetalCenter"><path d="M128 42H172V49H183V64H190V84H186V107H181V130H175V153H168V174H160V190H151V202H142V190H134V174H127V153H121V130H116V107H112V84H119V64H128Z"/></clipPath>
+      <clipPath id="realPetalRight"><path d="M210 51H232V119H228V141H224V160H219V174H211V184H199V192H184V198H168V202H151V179H156V157H162V136H169V116H177V98H185V82H193V69H203V58H210Z"/></clipPath>
     </defs>
     <image href="tulip.svg" x="-30" y="-8" width="360" height="360" preserveAspectRatio="xMidYMid meet" mask="url(#hideBloom)"/>
-    <image class="falling-petal" data-petal="0" href="tulip.svg" x="-30" y="-8" width="360" height="360" clip-path="url(#realPetal0)" style="--fall-x:-90px;--fall-r:-34deg" preserveAspectRatio="xMidYMid meet"/>
-<image class="falling-petal" data-petal="1" href="tulip.svg" x="-30" y="-8" width="360" height="360" clip-path="url(#realPetal1)" style="--fall-x:-48px;--fall-r:-22deg" preserveAspectRatio="xMidYMid meet"/>
-<image class="falling-petal" data-petal="2" href="tulip.svg" x="-30" y="-8" width="360" height="360" clip-path="url(#realPetal2)" style="--fall-x:0px;--fall-r:8deg" preserveAspectRatio="xMidYMid meet"/>
-<image class="falling-petal" data-petal="3" href="tulip.svg" x="-30" y="-8" width="360" height="360" clip-path="url(#realPetal3)" style="--fall-x:48px;--fall-r:22deg" preserveAspectRatio="xMidYMid meet"/>
-<image class="falling-petal" data-petal="4" href="tulip.svg" x="-30" y="-8" width="360" height="360" clip-path="url(#realPetal4)" style="--fall-x:90px;--fall-r:34deg" preserveAspectRatio="xMidYMid meet"/>
+    <image class="falling-petal" data-petal="0" href="tulip.svg" x="-30" y="-8" width="360" height="360" clip-path="url(#realPetalLeft)" style="--fall-x:-76px;--fall-r:-28deg" preserveAspectRatio="xMidYMid meet"/>
+    <image class="falling-petal" data-petal="1" href="tulip.svg" x="-30" y="-8" width="360" height="360" clip-path="url(#realPetalCenter)" style="--fall-x:0px;--fall-r:12deg" preserveAspectRatio="xMidYMid meet"/>
+    <image class="falling-petal" data-petal="2" href="tulip.svg" x="-30" y="-8" width="360" height="360" clip-path="url(#realPetalRight)" style="--fall-x:76px;--fall-r:28deg" preserveAspectRatio="xMidYMid meet"/>
    </svg></div>
   <div class="hearts" id="hearts" aria-hidden="true"></div>
   <div class="footer"><button class="pick" id="pick">PICK A PETAL</button><button class="reset" id="reset">restart</button></div>
@@ -102,7 +97,7 @@ button{font:inherit}
  const message=document.getElementById('message'),title=document.getElementById('title'),subtitle=document.getElementById('subtitle');
  const pick=document.getElementById('pick'),reset=document.getElementById('reset'),instruction=document.getElementById('instruction');
  const screen=document.getElementById('screen'),hearts=document.getElementById('hearts');
- const lines=['I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU'];
+ const lines=['I LOVE YOU','I LOVE YOU NOT','I LOVE YOU'];
  let index=0,finished=false;
  function setMessage(text){message.classList.remove('pop');void message.offsetWidth;message.textContent=text;message.classList.add('pop')}
  function heart(x,y,delay){const wrap=document.createElement('span');wrap.className='heart';wrap.style.left=x+'%';wrap.style.top=y+'%';wrap.style.animationDelay=delay+'s';wrap.style.setProperty('--dur',(2.5+Math.random()*1.3)+'s');wrap.style.setProperty('--drift',(-30+Math.random()*60)+'px');wrap.innerHTML='<svg viewBox="0 0 16 16"><path fill="#ff719e" d="M2 2h4v2h4V2h4v2h2v5h-2v2h-2v2H8v2H6v-2H4v-2H2V9H0V4h2z"/><path fill="#ffc0d3" d="M3 3h3v2H3zM10 3h3v2h-3z"/></svg>';hearts.appendChild(wrap);setTimeout(()=>wrap.remove(),5000)}
