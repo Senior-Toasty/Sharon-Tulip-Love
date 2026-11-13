@@ -44,9 +44,9 @@ button{font:inherit}
 .stem{fill:#47a96b;stroke:#8ad58b;stroke-width:2;stroke-linejoin:miter}
 .leaf{fill:#2e9b61;stroke:#78cb80;stroke-width:2;stroke-linejoin:miter}
 .leaf-vein{fill:none;stroke:#9bdf98;stroke-width:2;opacity:.65}
-.tulip-petal{stroke:#df4383;stroke-width:3.5;stroke-linejoin:miter;transform-box:fill-box;transform-origin:50% 100%;transition:opacity .28s,transform .75s cubic-bezier(.18,.72,.23,1)}
+.tulip-petal{stroke:#df4383;stroke-width:3.5;stroke-linejoin:miter;transform-box:fill-box;transform-origin:50% 100%;filter:drop-shadow(1px 2px 0 #a92d68)}
 .p1{fill:#f66b9d}.p2{fill:#ed568e}.p3{fill:#ff8db2}.p4{fill:#d94783}.p5{fill:#ffacc5}.p6{fill:#ec6b9d}
-.tulip-petal.removed{opacity:0;transform:translate(var(--tx),var(--ty)) rotate(var(--r)) scale(.78)}
+.tulip-petal.removed{animation:petalFall 1.05s cubic-bezier(.48,.02,.78,.35) forwards;pointer-events:none}@keyframes petalFall{0%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}18%{opacity:1;transform:translate(calc(var(--fall-x)*.18),-18px) rotate(calc(var(--fall-r)*.25)) scale(1.02)}100%{opacity:0;transform:translate(var(--fall-x),310px) rotate(var(--fall-r)) scale(.88)}}
 .stamen{fill:#ffd788;stroke:#d89b55;stroke-width:1}
 .hearts{position:absolute;inset:0;pointer-events:none;z-index:3;overflow:hidden}
 .heart{position:absolute;width:17px;height:17px;opacity:0;animation:heartRise var(--dur,2.8s) ease-out forwards;filter:drop-shadow(0 0 7px #ff719b66)}
@@ -60,8 +60,6 @@ button{font:inherit}
 .final .message{top:23%;font-size:clamp(13px,3.8vw,17px);color:#ffd2e0}
 .final .title{color:#ffe0b5;text-shadow:3px 3px #a94e7d,0 0 20px #ffd2ad66}
 .final .flower-stage{animation:flowerGlow 2.8s ease-in-out infinite alternate}
-.final .flower-base,.final #flowerDetails{opacity:0;transition:opacity .7s ease-out}
-.final .tulip-petal{opacity:0;transition:opacity .65s ease-out,transform .75s cubic-bezier(.18,.72,.23,1)}
 @keyframes flowerGlow{to{filter:drop-shadow(0 0 20px #fa83b888)}}
 @media(max-height:700px){body{padding:8px}.game-shell{width:min(100%,420px)}.screen{min-height:550px;height:calc(100svh - 36px)}.topline{top:4%}.title{top:10%}.subtitle{top:18%}.message{top:25%}.flower-stage{height:45%;bottom:18%}.footer{bottom:3.5%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
@@ -77,7 +75,7 @@ button{font:inherit}
   <div class="message" id="message" aria-live="polite">PICK A PETAL, MAKE A WISH</div>
   <div class="landscape" aria-hidden="true"><div class="mountain-back"></div><div class="mountain-front"></div><div class="ground"></div><div class="pixel-grass"></div></div>
   <div class="flower-stage">
-   <svg viewBox="0 0 300 360" role="img" aria-label="A layered pink pixel-art tulip with ten petals" shape-rendering="crispEdges">
+   <svg viewBox="0 0 300 360" role="img" aria-label="A large layered pixel-art tulip with ten individually falling petals" shape-rendering="crispEdges">
     <g id="foliage">
      <path d="M145 338H112V327H98V315H84V303H70V289H58V274H46V258H36V241H29V207H43V220H59V230H76V241H93V254H109V269H125V286H139V307H149V338Z" fill="#426db0" stroke="#31518d" stroke-width="2"/>
      <path d="M155 338H188V327H202V315H216V303H230V289H242V274H254V258H264V241H271V207H257V220H241V230H224V241H207V254H191V269H175V286H161V307H151V338Z" fill="#426db0" stroke="#31518d" stroke-width="2"/>
@@ -89,19 +87,18 @@ button{font:inherit}
      <path d="M145 215H155V338H145Z" fill="#9de69c"/>
      <path d="M137 286H163V295H137Z" fill="#63bfc3"/>
     </g>
-    <path class="flower-base" d="M91 218H78V207H67V193H59V117H51V96H43V51H83V62H103V75H119V55H137V43H165V55H183V64H200V75H218V62H237V51H257V96H249V117H241V193H233V207H222V218H205V226H95V218Z" fill="#d83c7b" stroke="#c93070" stroke-width="2"/>
     <g id="petalSet">
-     <path class="tulip-petal p1" style="--tx:-60px;--ty:-65px;--r:-42deg" d="M79 199H68V185H61V111H55V91H49V59H78V70H96V83H111V103H121V131H114V162H105V185H94V199Z"/>
-     <path class="tulip-petal p5" style="--tx:-35px;--ty:-90px;--r:-25deg" d="M104 180H93V165H85V118H92V96H108V81H127V93H139V116H132V142H123V166H115V180Z"/>
-     <path class="tulip-petal p2" style="--tx:-18px;--ty:-100px;--r:-18deg" d="M124 169H112V155H105V126H112V103H128V88H145V101H155V124H148V149H139V169Z"/>
-     <path class="tulip-petal p3" style="--tx:0px;--ty:-112px;--r:0deg" d="M139 155H128V135H121V95H130V73H143V58H166V70H179V91H186V123H178V145H166V159H151V155Z"/>
-     <path class="tulip-petal p5" style="--tx:22px;--ty:-100px;--r:18deg" d="M168 165H158V148H151V123H158V97H173V80H191V92H203V111H197V144H188V165H179Z"/>
-     <path class="tulip-petal p6" style="--tx:60px;--ty:-80px;--r:38deg" d="M190 197H179V183H172V160H181V134H190V107H205V90H223V76H242V62H251V94H245V116H238V185H230V199H216V207H198V197Z"/>
-     <path class="tulip-petal p2" style="--tx:-68px;--ty:-8px;--r:-70deg" d="M94 190H83V177H77V153H84V136H98V124H113V140H121V164H114V184H105V198H94Z"/>
-     <path class="tulip-petal p1" style="--tx:68px;--ty:-8px;--r:72deg" d="M205 191H194V179H186V158H194V137H208V125H224V138H232V160H225V181H217V196H205Z"/>
-     <path class="tulip-petal p4" style="--tx:-8px;--ty:-80px;--r:-8deg" d="M119 184H108V171H116V153H130V142H146V151H158V142H174V154H184V173H176V188H163V199H137V194H119Z"/>
-     <path class="tulip-petal p3" style="--tx:12px;--ty:-86px;--r:14deg" d="M143 164H132V151H139V130H151V116H164V127H173V145H166V164H156V174H145Z"/>
+     <path class="tulip-petal p4" style="--fall-x:-105px;--fall-r:-48deg" d="M150 218H132V207H116V195H99V181H84V164H70V142H62V112H68V91H80V75H97V69H111V82H120V108H130V139H140V172H150Z"/>
+     <path class="tulip-petal p1" style="--fall-x:-82px;--fall-r:-35deg" d="M150 218H132V204H116V190H103V173H91V151H83V124H86V103H98V87H113V92H126V113H132V143H140V174H150Z"/>
+     <path class="tulip-petal p5" style="--fall-x:-55px;--fall-r:-24deg" d="M150 218H136V203H125V185H114V164H107V137H109V110H120V91H134V83H146V101H151V129H150V159Z"/>
+     <path class="tulip-petal p2" style="--fall-x:-28px;--fall-r:-12deg" d="M150 218H138V197H131V174H126V146H128V116H137V92H150V77H161V96H166V124H161V154H157V184H150Z"/>
+     <path class="tulip-petal p3" style="--fall-x:0px;--fall-r:5deg" d="M150 218H141V192H137V164H138V133H143V102H151V66H164V82H174V109H171V139H164V168H159V195H150Z"/>
+     <path class="tulip-petal p5" style="--fall-x:28px;--fall-r:15deg" d="M150 218H150V188H158V159H164V130H172V103H185V88H199V102H205V127H198V154H187V179H173V200H163V218Z"/>
+     <path class="tulip-petal p6" style="--fall-x:55px;--fall-r:26deg" d="M150 218H163V202H176V185H188V164H199V139H207V113H220V91H235V99H245V119H240V148H229V172H216V191H199V207H181V218Z"/>
+     <path class="tulip-petal p2" style="--fall-x:82px;--fall-r:38deg" d="M150 218H169V205H187V192H204V176H219V157H231V134H240V110H252V93H263V115H257V145H246V171H231V192H212V207H190V218Z"/>
+     <path class="tulip-petal p1" style="--fall-x:105px;--fall-r:52deg" d="M150 218H176V208H196V197H216V182H233V164H246V143H254V118H262V99H274V128H269V158H257V183H240V202H219V215H194V224H150Z"/>
     </g>
+g>
     <g id="flowerDetails" aria-hidden="true">
      <path d="M136 60H151V72H163V85H174V99H164V91H153V79H136Z" fill="#ffd0d9" opacity=".85"/>
      <path d="M195 111H207V99H220V87H238V98H225V110H213V123H201Z" fill="#ffd0d9" opacity=".55"/>
