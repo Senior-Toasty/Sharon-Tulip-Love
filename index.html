@@ -60,6 +60,8 @@ button{font:inherit}
 .final .message{top:23%;font-size:clamp(13px,3.8vw,17px);color:#ffd2e0}
 .final .title{color:#ffe0b5;text-shadow:3px 3px #a94e7d,0 0 20px #ffd2ad66}
 .final .flower-stage{animation:flowerGlow 2.8s ease-in-out infinite alternate}
+.final .flower-base,.final #flowerDetails{opacity:0;transition:opacity .7s ease-out}
+.final .tulip-petal{opacity:0;transition:opacity .65s ease-out,transform .75s cubic-bezier(.18,.72,.23,1)}
 @keyframes flowerGlow{to{filter:drop-shadow(0 0 20px #fa83b888)}}
 @media(max-height:700px){body{padding:8px}.game-shell{width:min(100%,420px)}.screen{min-height:550px;height:calc(100svh - 36px)}.topline{top:4%}.title{top:10%}.subtitle{top:18%}.message{top:25%}.flower-stage{height:45%;bottom:18%}.footer{bottom:3.5%}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
