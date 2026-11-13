@@ -75,7 +75,7 @@ button{font:inherit}
   <div class="message" id="message" aria-live="polite">PICK A PETAL, MAKE A WISH</div>
   <div class="landscape" aria-hidden="true"><div class="mountain-back"></div><div class="mountain-front"></div><div class="ground"></div><div class="pixel-grass"></div></div>
   <div class="flower-stage">
-   <svg viewBox="0 0 300 360" role="img" aria-label="A classic cup-shaped pixel-art tulip with eight broad individually falling petals" shape-rendering="crispEdges">
+   <svg viewBox="0 0 300 360" role="img" aria-label="A detailed pink pixel-art tulip matching the supplied reference, with six broad individually falling petals" shape-rendering="crispEdges">
     <g id="foliage">
      <path d="M145 338H112V327H98V315H84V303H70V289H58V274H46V258H36V241H29V207H43V220H59V230H76V241H93V254H109V269H125V286H139V307H149V338Z" fill="#426db0" stroke="#31518d" stroke-width="2"/>
      <path d="M155 338H188V327H202V315H216V303H230V289H242V274H254V258H264V241H271V207H257V220H241V230H224V241H207V254H191V269H175V286H161V307H151V338Z" fill="#426db0" stroke="#31518d" stroke-width="2"/>
@@ -88,17 +88,42 @@ button{font:inherit}
      <path d="M137 286H163V295H137Z" fill="#63bfc3"/>
     </g>
     <g id="petalSet">
-     <!-- Back petals: upright side cups and the tall centre petal. -->
-     <path class="tulip-petal p4" style="--fall-x:-110px;--fall-r:-48deg" d="M150 221H124L105 216L88 206L74 191L65 174L60 153V116L53 108V72H65V55H91V68H108V83H122L134 105L143 132L150 164Z"/>
-     <path class="tulip-petal p2" style="--fall-x:-75px;--fall-r:-34deg" d="M150 221H130L115 211L104 196L97 177L94 153V122L87 112V83H99V65H121V81H136L145 104L150 132Z"/>
-     <path class="tulip-petal p5" style="--fall-x:-35px;--fall-r:-18deg" d="M150 221H137L130 203L128 179V143L124 121V85L135 74V49H149V32H164V49H178V74L189 85V121L185 143V179L178 203L164 221Z"/>
-     <path class="tulip-petal p2" style="--fall-x:75px;--fall-r:34deg" d="M150 221H170L185 211L196 196L203 177L206 153V122L213 112V83H201V65H179V81H164L155 104L150 132Z"/>
-     <path class="tulip-petal p4" style="--fall-x:110px;--fall-r:48deg" d="M150 221H176L195 216L212 206L226 191L235 174L240 153V116L247 108V72H235V55H209V68H192V83H178L166 105L157 132L150 164Z"/>
-     <!-- Front petals: broad overlapping panels that give the tulip its cup. -->
-     <path class="tulip-petal p1" style="--fall-x:-90px;--fall-r:-42deg" d="M150 221H124L105 216L88 206L74 191L68 174V147H80V137H96V148H108V165H122V181H139V198H150Z"/>
-     <path class="tulip-petal p6" style="--fall-x:90px;--fall-r:42deg" d="M150 221H176L195 216L212 206L226 191L232 174V147H220V137H204V148H192V165H178V181H161V198H150Z"/>
-     <path class="tulip-petal p3" style="--fall-x:8px;--fall-r:8deg" d="M124 207H110V194H102V180H100V162H112V151H127V159H139V169H150V158H163V151H178V162H200V180H198V194H190V207H176V215H124Z"/>
-    </g></svg>
+     <!-- Pixel-art tulip traced from the supplied reference: two broad outer petals,
+          two overlapping inner petals and a rounded central crown. -->
+     <g class="tulip-petal p1" style="--fall-x:-105px;--fall-r:-42deg">
+      <path d="M150 218H119V211H102V202H88V188H77V169H69V139H62V111H55V76H55V51H88V64H106V77H122V91H136V111H150V137Z" fill="#f56f9e" stroke="#d83c79" stroke-width="5" stroke-linejoin="miter"/>
+      <path d="M61 77H78V91H96V105H110V119H124V134H139V149H150V164H138V154H124V139H110V125H96V111H82V98H61Z" fill="#fff0d0"/>
+      <path d="M68 145H82V159H96V173H110V187H126V201H145V213H118V205H101V194H87V180H76V163H68Z" fill="#f99cba"/>
+      <path d="M61 91H76V105H90V119H104V133H118V147H132V161H145V176H132V163H118V150H104V136H90V122H76V108H61Z" fill="#ffb0c7" opacity=".8"/>
+     </g>
+     <g class="tulip-petal p6" style="--fall-x:105px;--fall-r:42deg">
+      <path d="M150 218H181V211H198V202H212V188H223V169H231V139H238V111H245V76H245V51H212V64H194V77H178V91H164V111H150V137Z" fill="#f58ca9" stroke="#d83c79" stroke-width="5" stroke-linejoin="miter"/>
+      <path d="M239 77H222V91H204V105H190V119H176V134H161V149H150V164H162V154H176V139H190V125H204V111H218V98H239Z" fill="#ffd0d9"/>
+      <path d="M232 145H218V159H204V173H190V187H174V201H155V213H182V205H199V194H213V180H224V163H232Z" fill="#ffb5c7"/>
+      <path d="M239 91H224V105H210V119H196V133H182V147H168V161H155V176H168V163H182V150H196V136H210V122H224V108H239Z" fill="#ffc1d0" opacity=".8"/>
+     </g>
+     <g class="tulip-petal p2" style="--fall-x:-48px;--fall-r:-24deg">
+      <path d="M150 180H132V165H119V148H108V128H101V104H101V79H115V65H137V78H150V97H160V121H157V151Z" fill="#f98db0" stroke="#d83c79" stroke-width="5" stroke-linejoin="miter"/>
+      <path d="M112 84H132V98H145V113H150V135H138V120H125V105H112Z" fill="#ffd0d9"/>
+      <path d="M109 132H123V145H137V158H150V173H133V163H120V149H109Z" fill="#f66c9c"/>
+     </g>
+     <g class="tulip-petal p5" style="--fall-x:48px;--fall-r:24deg">
+      <path d="M150 180H168V165H181V148H192V128H199V104H199V79H185V65H163V78H150V97H140V121H143V151Z" fill="#ff9fb7" stroke="#d83c79" stroke-width="5" stroke-linejoin="miter"/>
+      <path d="M188 84H168V98H155V113H150V135H162V120H175V105H188Z" fill="#ffd5dc"/>
+      <path d="M191 132H177V145H163V158H150V173H167V163H180V149H191Z" fill="#f778a2"/>
+     </g>
+     <g class="tulip-petal p3" style="--fall-x:0px;--fall-r:8deg">
+      <path d="M119 139H108V117H115V91H129V77H143V64H157V64H171V77H185V91H192V117H199V139H185V153H171V166H150V157H133V149Z" fill="#ff9fbd" stroke="#d83c79" stroke-width="5" stroke-linejoin="miter"/>
+      <path d="M132 82H150V96H165V110H179V125H165V117H150V103H132Z" fill="#ffd3dc"/>
+      <path d="M150 110H164V124H178V138H164V131H150Z" fill="#ffb8ca"/>
+      <path d="M119 125H133V139H147V153H133V145H119Z" fill="#f36b9b"/>
+      <path d="M164 139H178V125H191V139H178V153H164Z" fill="#f36b9b"/>
+     </g>
+     <g class="tulip-petal p2" style="--fall-x:0px;--fall-r:-5deg">
+      <path d="M96 168H111V181H127V190H145V195H155V195H173V190H189V181H204V168H214V185H205V201H189V213H171V220H129V220H111V213H95V201H86V185H96Z" fill="#e94783" stroke="#d83c79" stroke-width="4" stroke-linejoin="miter"/>
+      <path d="M111 187H129V196H145V202H155V202H171V196H189V187H199V200H184V210H166V215H134V210H116V200H101V187Z" fill="#f45d91"/>
+     </g>
+    </g>svg>
   </div>
   <div class="hearts" id="hearts" aria-hidden="true"></div>
   <div class="footer"><button class="pick" id="pick">PICK A PETAL</button><button class="reset" id="reset">restart</button></div>
@@ -107,11 +132,11 @@ button{font:inherit}
 </main>
 <script>
 (()=>{
- const petalNodes=[...document.querySelectorAll('#petalSet .tulip-petal')].reverse();
+ const petalNodes=[...document.querySelectorAll('#petalSet .tulip-petal')];
  const message=document.getElementById('message'),title=document.getElementById('title'),subtitle=document.getElementById('subtitle');
  const pick=document.getElementById('pick'),reset=document.getElementById('reset'),instruction=document.getElementById('instruction');
  const screen=document.getElementById('screen'),hearts=document.getElementById('hearts');
- const lines=['I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT'];
+ const lines=['I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT'];
  let index=0,finished=false;
  function setMessage(text){message.classList.remove('pop');void message.offsetWidth;message.textContent=text;message.classList.add('pop')}
  function heart(x,y,delay){const wrap=document.createElement('span');wrap.className='heart';wrap.style.left=x+'%';wrap.style.top=y+'%';wrap.style.animationDelay=delay+'s';wrap.style.setProperty('--dur',(2.5+Math.random()*1.3)+'s');wrap.style.setProperty('--drift',(-30+Math.random()*60)+'px');wrap.innerHTML='<svg viewBox="0 0 16 16"><path fill="#ff719e" d="M2 2h4v2h4V2h4v2h2v5h-2v2h-2v2H8v2H6v-2H4v-2H2V9H0V4h2z"/><path fill="#ffc0d3" d="M3 3h3v2H3zM10 3h3v2h-3z"/></svg>';hearts.appendChild(wrap);setTimeout(()=>wrap.remove(),5000)}
