@@ -1,33 +1,124 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10183d">
-<title>A little flower for Sharon</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080d25">
+<meta name="description" content="A little pixel-art tulip love game made for Sharon.">
+<title>For Sharon, with love</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 30%,#28376d,#10183d 48%,#05091c);color:#fff1d2;font-family:ui-monospace,"Courier New",monospace}
-.scene{width:min(100vw,520px);height:100svh;min-height:620px;max-height:850px;position:relative;overflow:hidden;background:linear-gradient(#101b46,#172b5b 62%,#12284b);isolation:isolate}
-.stars{position:absolute;inset:0;background-image:radial-gradient(2px 2px at 12% 14%,#fff 98%,transparent),radial-gradient(1px 1px at 29% 28%,#fff 98%,transparent),radial-gradient(2px 2px at 72% 12%,#fff 98%,transparent),radial-gradient(1px 1px at 86% 34%,#fff 98%,transparent),radial-gradient(1px 1px at 55% 22%,#fff 98%,transparent);background-size:230px 190px;opacity:.8}
-.moon{position:absolute;right:12%;top:13%;width:52px;height:52px;border-radius:50%;background:#fff2c6;box-shadow:0 0 24px #fff0bd88,0 0 65px #fff0bd33}
-h1{position:absolute;top:7%;width:100%;margin:0;text-align:center;color:#ff9fc5;font-size:clamp(24px,7vw,36px);letter-spacing:3px;text-shadow:3px 3px #6b3a83,0 0 18px #ff9fc577}
-.sub{position:absolute;top:16%;left:10%;width:80%;text-align:center;color:#d8e1ff;font-size:12px;line-height:1.6}
-.message{position:absolute;top:23%;left:7%;width:86%;text-align:center;min-height:62px;color:#fff4d8;font-size:clamp(17px,5vw,24px);line-height:1.4;text-shadow:2px 2px #17204d}
-.flower{position:absolute;left:50%;bottom:13%;width:230px;height:390px;transform:translateX(-50%)}svg{width:100%;height:100%;overflow:visible}.stem{fill:none;stroke:#56b86d;stroke-width:8;stroke-linecap:round}.leaf{fill:#278d55;stroke:#65c77b;stroke-width:2}.petal{fill:#f36f9d;stroke:#ffb1ca;stroke-width:2;transform-box:fill-box;transform-origin:center;transition:opacity .45s,transform .6s}.back{fill:#c94f85;stroke:#f58ab0;stroke-width:2}.gone{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--rot)) scale(.65)}
-.hills{position:absolute;bottom:0;left:-10%;width:120%;height:27%;background:#123b39;clip-path:polygon(0 35%,12% 24%,26% 39%,42% 15%,58% 35%,73% 12%,88% 31%,100% 20%,100% 100%,0 100%);z-index:-0}.hills:after{content:"";position:absolute;inset:35% 0 0;background:#0a292c}.grass{position:absolute;bottom:0;width:100%;height:17%;background:repeating-linear-gradient(100deg,transparent 0 12px,#6ab56a 13px 14px,transparent 15px 25px)}
-.controls{position:absolute;bottom:5%;left:0;width:100%;display:flex;justify-content:center;gap:10px;padding:0 18px}button{font:inherit;font-size:13px;color:#172044;background:#ffd5e4;border:2px solid #fff0f5;border-radius:5px;padding:13px 18px;box-shadow:0 4px 0 #a64f79;cursor:pointer}button:active{transform:translateY(3px);box-shadow:0 1px 0 #a64f79}.reset{background:#d8e4ff;box-shadow:0 4px 0 #647cae}.hint{position:absolute;bottom:1.5%;width:100%;text-align:center;font-size:9px;color:#b5c6e9;opacity:.8}.final{font-size:clamp(19px,5.4vw,27px);color:#ffb8d0}
-@media(max-height:700px){.flower{height:330px;bottom:12%}.message{top:21%}.sub{top:14%}.controls{bottom:4%}}
-</style></head>
-<body><main class="scene" aria-label="A tulip love game for Sharon"><div class="stars"></div><div class="moon"></div>
-<h1 id="heading">LOVES ME</h1><div class="sub">a tiny flower, with a very important answer</div><div class="message" id="message" aria-live="polite">Pick a tulip petal to begin...</div>
-<div class="flower"><svg viewBox="0 0 230 390" role="img" aria-label="A pink tulip drawn with SVG">
-<path class="stem" d="M115 175 C111 235 123 285 116 355"/><path class="leaf" d="M116 285 C70 253 42 268 48 303 C72 320 99 307 116 285Z"/><path class="leaf" d="M117 320 C151 278 184 286 181 316 C164 339 139 336 117 320Z"/>
-<path class="back" d="M78 117 Q63 57 91 42 Q107 67 115 104 Q122 53 143 42 Q166 62 151 119 Q137 145 115 150 Q91 145 78 117Z"/>
-<g id="petals">
-<path class="petal" d="M115 126 Q69 115 72 74 Q75 40 97 30 Q112 55 115 126Z" style="--dx:-65px;--dy:-42px;--rot:-55deg"/>
-<path class="petal" d="M115 126 Q91 75 111 29 Q133 14 145 43 Q146 86 115 126Z" style="--dx:12px;--dy:-65px;--rot:35deg"/>
-<path class="petal" d="M115 126 Q137 69 164 72 Q183 100 151 128 Q133 140 115 126Z" style="--dx:66px;--dy:-26px;--rot:70deg"/>
-<path class="petal" d="M115 126 Q66 135 62 105 Q57 84 72 74 Q96 93 115 126Z" style="--dx:-72px;--dy:8px;--rot:-90deg"/>
-<path class="petal" d="M115 126 Q125 88 151 84 Q170 105 145 130 Q130 139 115 126Z" style="--dx:70px;--dy:20px;--rot:90deg"/>
-<path class="petal" d="M115 126 Q91 105 91 78 Q102 55 115 62 Q127 91 115 126Z" style="--dx:0px;--dy:-75px;--rot:10deg"/></g>
-<path d="M87 123 Q114 143 144 123 Q139 161 115 169 Q91 158 87 123Z" fill="#e85c91" stroke="#ffb1ca" stroke-width="2"/><ellipse cx="115" cy="126" rx="8" ry="5" fill="#ffd46f"/></svg></div>
-<div class="hills"></div><div class="grass"></div><div class="controls"><button id="pick">Pick a petal ♡</button><button class="reset" id="reset">Start again</button></div><div class="hint" id="hint">one petal at a time • made with love</div></main>
-<script>(()=>{const petals=[...document.querySelectorAll('.petal')],message=document.getElementById('message'),pick=document.getElementById('pick'),hint=document.getElementById('hint'),heading=document.getElementById('heading');let index=0;const lines=['I love you','I love you not','I love you','I love you not','I love you','I love you not'];function choose(){if(index>=petals.length)return;petals[index].classList.add('gone');message.textContent=lines[index++];if(index===petals.length){setTimeout(()=>{message.innerHTML='I Love you so much<br><span class="final">Sharon ♡</span>';message.classList.add('final');heading.textContent='IT WAS ALWAYS YOU';pick.textContent='You are loved';pick.disabled=true;hint.textContent='the flower has made its decision'},650)}}function restart(){index=0;petals.forEach(p=>p.classList.remove('gone'));message.textContent='Pick a tulip petal to begin...';message.classList.remove('final');heading.textContent='LOVES ME';pick.textContent='Pick a petal ♡';pick.disabled=false;hint.textContent='one petal at a time • made with love'}pick.addEventListener('click',choose);document.getElementById('reset').addEventListener('click',restart)})();</script></body></html>
+:root{color-scheme:dark;--ink:#090d28;--night:#101b48;--pink:#ff8db8;--rose:#f45d9d;--cream:#fff0d0;--mint:#8de0a5;--line:#40558b}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--ink)}
+body{min-height:100svh;display:grid;place-items:center;padding:18px;color:var(--cream);font-family:'VT323',monospace;overflow-x:hidden;background:radial-gradient(ellipse at 50% 0%,#27396d 0,#111a42 36%,#080d25 78%)}
+button{font:inherit}
+.game-shell{width:min(100%,470px);position:relative;padding:9px;background:linear-gradient(135deg,#62729a,#1a2449 20%,#070b20 60%,#4c5b85);box-shadow:0 0 0 2px #0a102d,0 0 0 4px #4d5d89,0 22px 70px #0009;border-radius:7px}
+.game-shell:before{content:"";position:absolute;inset:4px;border:1px solid #a9b6d744;border-radius:4px;pointer-events:none;z-index:5}
+.screen{height:min(820px,calc(100svh - 54px));min-height:600px;position:relative;overflow:hidden;background:#101b48;border:2px solid #05091d;isolation:isolate}
+.sky{position:absolute;inset:0 0 30%;background:linear-gradient(180deg,#101735 0%,#18285f 48%,#304b89 100%);z-index:-4}
+.sky:after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 62%,#617ac533,transparent 52%)}
+.pixel-stars{position:absolute;inset:0 0 27%;z-index:-3;pointer-events:none;background-image:
+ radial-gradient(circle,#f9e8bd 0 1.2px,transparent 1.8px),radial-gradient(circle,#8fb9ed 0 1px,transparent 1.6px),radial-gradient(circle,#fff 0 1px,transparent 1.7px);
+ background-size:73px 61px,113px 97px,157px 127px;background-position:9px 5px,28px 19px,52px 33px;opacity:.88}
+.moon{position:absolute;right:12%;top:15%;width:58px;aspect-ratio:1;background:#f8e9b7;clip-path:polygon(18% 0,82% 0,82% 8%,92% 8%,92% 20%,100% 20%,100% 78%,91% 78%,91% 91%,78% 91%,78% 100%,20% 100%,20% 91%,8% 91%,8% 78%,0 78%,0 20%,8% 20%,8% 8%,18% 8%);box-shadow:0 0 32px #ffe4a54d;filter:drop-shadow(0 0 10px #ffe4a533)}
+.moon:after{content:"";position:absolute;left:13px;top:13px;width:9px;height:9px;background:#e7d49e;box-shadow:17px 9px 0 #e7d49e,7px 25px 0 #e7d49e}
+.topline{position:absolute;left:7%;right:7%;top:5%;display:flex;justify-content:space-between;align-items:center;color:#a9bde8;font-size:17px;letter-spacing:2px;text-transform:uppercase}
+.topline span:last-child{color:#f3a3c4}
+.title{position:absolute;top:12%;left:0;right:0;text-align:center;font-family:'Press Start 2P',monospace;font-size:clamp(17px,4.9vw,25px);line-height:1.6;letter-spacing:1px;color:#ff9bc1;text-shadow:3px 3px 0 #763b79,0 0 20px #ff8db855;margin:0}
+.subtitle{position:absolute;top:20.5%;left:8%;right:8%;text-align:center;font-size:23px;color:#cad7f3;letter-spacing:.6px}
+.message{position:absolute;z-index:4;top:27%;left:5%;right:5%;min-height:48px;text-align:center;font-family:'Press Start 2P',monospace;font-size:clamp(12px,3.4vw,16px);line-height:1.85;color:#fff0d0;text-shadow:2px 2px #141b47;transition:opacity .18s}
+.message.pop{animation:messagePop .32s ease-out}
+@keyframes messagePop{0%{transform:translateY(7px);opacity:0}100%{transform:translateY(0);opacity:1}}
+.landscape{position:absolute;left:0;right:0;bottom:15%;height:26%;z-index:-2;overflow:visible}
+.mountain-back{position:absolute;inset:0 0 30%;background:#263c79;clip-path:polygon(0 72%,8% 62%,15% 67%,24% 31%,31% 48%,40% 9%,47% 41%,55% 30%,65% 67%,75% 22%,83% 56%,91% 39%,100% 62%,100% 100%,0 100%)}
+.mountain-front{position:absolute;left:0;right:0;bottom:20%;height:65%;background:#192d62;clip-path:polygon(0 65%,11% 43%,18% 56%,31% 24%,43% 59%,55% 37%,67% 67%,80% 25%,88% 47%,100% 38%,100% 100%,0 100%)}
+.ground{position:absolute;bottom:0;left:0;right:0;height:31%;background:#143e3e;border-top:4px solid #30705c;box-shadow:inset 0 9px #1d594c}
+.ground:before{content:"";position:absolute;inset:5px 0 auto;height:8px;background:repeating-linear-gradient(90deg,#67b477 0 5px,transparent 5px 13px,#4b9968 13px 17px,transparent 17px 26px)}
+.ground:after{content:"";position:absolute;left:0;right:0;bottom:0;height:15px;background:repeating-linear-gradient(90deg,#0a292f 0 9px,#10333a 9px 20px)}
+.pixel-grass{position:absolute;bottom:28%;left:0;right:0;height:20px;background:repeating-linear-gradient(90deg,transparent 0 7px,#5fae70 7px 10px,transparent 10px 17px,#317c59 17px 19px,transparent 19px 27px);clip-path:polygon(0 100%,0 45%,4% 45%,4% 0,6% 0,6% 55%,10% 55%,10% 22%,12% 22%,12% 100%,16% 100%,16% 34%,18% 34%,18% 0,20% 0,20% 100%,24% 100%,24% 30%,26% 30%,26% 100%,30% 100%,30% 15%,32% 15%,32% 100%,38% 100%,38% 40%,40% 40%,40% 100%,45% 100%,45% 22%,47% 22%,47% 100%,53% 100%,53% 30%,55% 30%,55% 100%,60% 100%,60% 15%,62% 15%,62% 100%,68% 100%,68% 35%,70% 35%,70% 100%,75% 100%,75% 20%,77% 20%,77% 100%,82% 100%,82% 38%,84% 38%,84% 100%,90% 100%,90% 12%,92% 12%,92% 100%,97% 100%,97% 44%,99% 44%,99% 100%)}
+.flower-stage{position:absolute;left:50%;bottom:18%;width:min(76%,300px);height:48%;transform:translateX(-50%);z-index:2;filter:drop-shadow(0 12px 8px #070e2b66)}
+.flower-stage svg{width:100%;height:100%;overflow:visible;shape-rendering:crispEdges}
+.stem{fill:#47a96b;stroke:#8ad58b;stroke-width:2;stroke-linejoin:miter}
+.leaf{fill:#2e9b61;stroke:#78cb80;stroke-width:2;stroke-linejoin:miter}
+.leaf-vein{fill:none;stroke:#9bdf98;stroke-width:2;opacity:.65}
+.tulip-petal{stroke:#ffb8cf;stroke-width:2;stroke-linejoin:miter;transform-box:fill-box;transform-origin:50% 100%;transition:opacity .28s,transform .75s cubic-bezier(.18,.72,.23,1)}
+.p1{fill:#f66b9d}.p2{fill:#ed568e}.p3{fill:#ff8db2}.p4{fill:#d94783}.p5{fill:#ffacc5}.p6{fill:#ec6b9d}
+.tulip-petal.removed{opacity:0;transform:translate(var(--tx),var(--ty)) rotate(var(--r)) scale(.78)}
+.stamen{fill:#ffd788;stroke:#d89b55;stroke-width:1}
+.hearts{position:absolute;inset:0;pointer-events:none;z-index:3;overflow:hidden}
+.heart{position:absolute;width:17px;height:17px;opacity:0;animation:heartRise var(--dur,2.8s) ease-out forwards;filter:drop-shadow(0 0 7px #ff719b66)}
+.heart svg{width:100%;height:100%;shape-rendering:crispEdges}
+@keyframes heartRise{0%{opacity:0;transform:translate(0,0) scale(.55)}12%{opacity:1}78%{opacity:.9}100%{opacity:0;transform:translate(var(--drift),-210px) scale(1.1)}}
+.footer{position:absolute;bottom:4.5%;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:12px;z-index:6}
+.pick{font-family:'Press Start 2P',monospace;font-size:9px;line-height:1.5;letter-spacing:.2px;color:#171b3d;background:linear-gradient(#ffd2df,#ff9fbe);border:0;border-bottom:4px solid #a94d76;padding:15px 17px;min-height:48px;box-shadow:0 0 0 2px #ffe5ed,0 5px 18px #f66b9d28;cursor:pointer;transition:transform .12s,filter .12s}
+.pick:hover{filter:brightness(1.08)}.pick:active{transform:translateY(3px);border-bottom-width:1px}.pick:disabled{opacity:.75;cursor:default}
+.reset{background:transparent;border:0;color:#b9c8ed;font-size:21px;text-decoration:underline;text-underline-offset:4px;cursor:pointer;padding:8px}
+.instruction{position:absolute;bottom:1.5%;left:0;right:0;text-align:center;font-size:17px;color:#a8bae2;letter-spacing:1px;z-index:6}
+.final .message{top:23%;font-size:clamp(13px,3.8vw,17px);color:#ffd2e0}
+.final .title{color:#ffe0b5;text-shadow:3px 3px #a94e7d,0 0 20px #ffd2ad66}
+.final .flower-stage{animation:flowerGlow 2.8s ease-in-out infinite alternate}
+@keyframes flowerGlow{to{filter:drop-shadow(0 0 20px #fa83b888)}}
+@media(max-height:700px){body{padding:8px}.game-shell{width:min(100%,420px)}.screen{min-height:550px;height:calc(100svh - 36px)}.topline{top:4%}.title{top:10%}.subtitle{top:18%}.message{top:25%}.flower-stage{height:45%;bottom:18%}.footer{bottom:3.5%}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main class="game-shell" id="game">
+ <section class="screen" id="screen" aria-label="Interactive pixel-art tulip">
+  <div class="sky"></div><div class="pixel-stars"></div><div class="moon"></div>
+  <div class="topline"><span>LOVE GARDEN</span><span>♡ SHARON</span></div>
+  <h1 class="title" id="title">LOVES ME</h1>
+  <div class="subtitle" id="subtitle">a little game, just for you</div>
+  <div class="message" id="message" aria-live="polite">PICK A PETAL, MAKE A WISH</div>
+  <div class="landscape" aria-hidden="true"><div class="mountain-back"></div><div class="mountain-front"></div><div class="ground"></div><div class="pixel-grass"></div></div>
+  <div class="flower-stage">
+   <svg viewBox="0 0 300 360" role="img" aria-label="A tulip made from pixel-art shapes">
+    <g id="stemGroup">
+     <path class="stem" d="M144 195h13v17h-5v17h5v17h-5v17h5v17h-5v17h-6v-17h-5v-17h5v-17h-5v-17h5v-17h-2z"/>
+     <path class="leaf" d="M148 269h-14v-8h-12v-10h-10v-12h-8v-13h17v7h12v8h10v10h8v12z"/>
+     <path class="leaf-vein" d="M145 265l-25-27"/>
+     <path class="leaf" d="M155 290h12v-8h11v-9h12v-10h10v-12h9v-12h-17v8h-11v8h-11v10h-8v12h-7z"/>
+     <path class="leaf-vein" d="M160 284l27-28"/>
+    </g>
+    <g id="petalSet">
+     <path class="tulip-petal p4" style="--tx:-60px;--ty:-65px;--r:-42deg" d="M91 167h-8v-17h6v-16h9v-17h13v-11h18v13h-8v17h-9v16h-9v15z"/>
+     <path class="tulip-petal p2" style="--tx:-26px;--ty:-98px;--r:-24deg" d="M112 151h-8v-25h7v-23h10V84h15V70h18v14h-7v19h-8v23h-9v25z"/>
+     <path class="tulip-petal p5" style="--tx:4px;--ty:-112px;--r:4deg" d="M143 148h-8v-28h7V94h9V72h15V61h17v13h-7v23h-8v27h-8v24z"/>
+     <path class="tulip-petal p1" style="--tx:50px;--ty:-86px;--r:35deg" d="M176 153h-8v-22h8v-20h9v-16h14v11h10v16h-7v19h-9v18h-9v12h-8z"/>
+     <path class="tulip-petal p3" style="--tx:-64px;--ty:-10px;--r:-70deg" d="M91 170h-12v-12h-8v-18h9v-15h13v12h9v16h9v18h-10z"/>
+     <path class="tulip-petal p6" style="--tx:67px;--ty:-8px;--r:75deg" d="M194 173h9v-17h9v-16h9v-12h12v13h8v16h-8v18h-9v13h-12v-8h-18z"/>
+     <path class="tulip-petal p2" style="--tx:0px;--ty:-100px;--r:0deg" d="M119 168h-8v-16h9v-17h8v-21h12v-12h19v12h11v18h-7v21h-10v19h-26z"/>
+     <path class="tulip-petal p5" style="--tx:12px;--ty:-72px;--r:15deg" d="M135 165h-8v-20h8v-17h9v-16h12v11h9v17h-7v18h-8v14h-15z"/>
+    </g>
+    <g id="flowerDetails" aria-hidden="true">
+     <path d="M117 168h67v9h-8v8h-9v7h-34v-7h-9v-8h-7z" fill="#c93f79"/>
+     <path d="M133 180h39v8h-8v7h-23v-7h-8z" fill="#f18aaa"/>
+     <rect class="stamen" x="146" y="178" width="7" height="7"/><rect class="stamen" x="158" y="176" width="7" height="7"/>
+    </g>
+   </svg>
+  </div>
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+  <div class="footer"><button class="pick" id="pick">PICK A PETAL</button><button class="reset" id="reset">restart</button></div>
+  <div class="instruction" id="instruction">one petal at a time</div>
+ </section>
+</main>
+<script>
+(()=>{
+ const petalNodes=[...document.querySelectorAll('#petalSet .tulip-petal')];
+ const message=document.getElementById('message'),title=document.getElementById('title'),subtitle=document.getElementById('subtitle');
+ const pick=document.getElementById('pick'),reset=document.getElementById('reset'),instruction=document.getElementById('instruction');
+ const screen=document.getElementById('screen'),hearts=document.getElementById('hearts');
+ const lines=['I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU'];
+ let index=0,finished=false;
+ function setMessage(text){message.classList.remove('pop');void message.offsetWidth;message.textContent=text;message.classList.add('pop')}
+ function heart(x,y,delay){const wrap=document.createElement('span');wrap.className='heart';wrap.style.left=x+'%';wrap.style.top=y+'%';wrap.style.animationDelay=delay+'s';wrap.style.setProperty('--dur',(2.5+Math.random()*1.3)+'s');wrap.style.setProperty('--drift',(-30+Math.random()*60)+'px');wrap.innerHTML='<svg viewBox="0 0 16 16"><path fill="#ff719e" d="M2 2h4v2h4V2h4v2h2v5h-2v2h-2v2H8v2H6v-2H4v-2H2V9H0V4h2z"/><path fill="#ffc0d3" d="M3 3h3v2H3zM10 3h3v2h-3z"/></svg>';hearts.appendChild(wrap);setTimeout(()=>wrap.remove(),5000)}
+ function finale(){finished=true;screen.classList.add('final');title.textContent='IT WAS ALWAYS YOU';subtitle.textContent='my favourite answer';message.innerHTML='I LOVE YOU SO MUCH<br><span style="color:#ffb2cc">SHARON</span>';message.classList.add('pop');pick.textContent='YOU ARE LOVED';pick.disabled=true;instruction.textContent='and that is never changing';for(let i=0;i<22;i++)heart(36+Math.random()*28,47+Math.random()*13,i*.12)}
+ function choose(){if(finished||index>=petalNodes.length)return;petalNodes[index].classList.add('removed');setMessage(lines[index]);index++;if(index===petalNodes.length){instruction.textContent='just one last thing...';setTimeout(finale,850)}}
+ function restart(){index=0;finished=false;screen.classList.remove('final');petalNodes.forEach(p=>p.classList.remove('removed'));hearts.innerHTML='';title.textContent='LOVES ME';subtitle.textContent='a little game, just for you';message.textContent='PICK A PETAL, MAKE A WISH';message.classList.remove('pop');pick.textContent='PICK A PETAL';pick.disabled=false;instruction.textContent='one petal at a time'}
+ pick.addEventListener('click',choose);reset.addEventListener('click',restart);
+})();
+</script>
+</body></html>
