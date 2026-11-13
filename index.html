@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#080d25">
-<meta name="description" content="A little pixel-art tulip love game made for Sharon.">
+<meta name="description" content="A little rose-picking love game made for Sharon.">
 <title>For Sharon, with love</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,13 +40,13 @@ button{font:inherit}
 .ground:after{content:"";position:absolute;left:0;right:0;bottom:0;height:15px;background:repeating-linear-gradient(90deg,#0a292f 0 9px,#10333a 9px 20px)}
 .pixel-grass{position:absolute;bottom:28%;left:0;right:0;height:20px;background:repeating-linear-gradient(90deg,transparent 0 7px,#5fae70 7px 10px,transparent 10px 17px,#317c59 17px 19px,transparent 19px 27px);clip-path:polygon(0 100%,0 45%,4% 45%,4% 0,6% 0,6% 55%,10% 55%,10% 22%,12% 22%,12% 100%,16% 100%,16% 34%,18% 34%,18% 0,20% 0,20% 100%,24% 100%,24% 30%,26% 30%,26% 100%,30% 100%,30% 15%,32% 15%,32% 100%,38% 100%,38% 40%,40% 40%,40% 100%,45% 100%,45% 22%,47% 22%,47% 100%,53% 100%,53% 30%,55% 30%,55% 100%,60% 100%,60% 15%,62% 15%,62% 100%,68% 100%,68% 35%,70% 35%,70% 100%,75% 100%,75% 20%,77% 20%,77% 100%,82% 100%,82% 38%,84% 38%,84% 100%,90% 100%,90% 12%,92% 12%,92% 100%,97% 100%,97% 44%,99% 44%,99% 100%)}
 .flower-stage{position:absolute;left:50%;bottom:18%;width:min(76%,300px);height:48%;transform:translateX(-50%);z-index:2;filter:drop-shadow(0 12px 8px #070e2b66)}
-.flower-stage svg{width:100%;height:100%;overflow:visible;shape-rendering:crispEdges}.flower-stage image{image-rendering:pixelated}
+.flower-stage svg{width:100%;height:100%;overflow:visible;shape-rendering:geometricPrecision}
 .stem{fill:#47a96b;stroke:#8ad58b;stroke-width:2;stroke-linejoin:miter}
 .leaf{fill:#2e9b61;stroke:#78cb80;stroke-width:2;stroke-linejoin:miter}
 .leaf-vein{fill:none;stroke:#9bdf98;stroke-width:2;opacity:.65}
 .tulip-petal{stroke:#d83f7a;stroke-width:3;stroke-linejoin:miter;transform-box:fill-box;transform-origin:50% 88%;filter:drop-shadow(1px 2px 0 #a92d68)}
 .p1{fill:#f66b9d}.p2{fill:#ed568e}.p3{fill:#ff8db2}.p4{fill:#d94783}.p5{fill:#ffacc5}.p6{fill:#ec6b9d}
-.falling-petal{transform-box:fill-box;transform-origin:50% 62%;transition:none}.falling-petal.removed{animation:petalFall 1.25s cubic-bezier(.45,.04,.76,.38) forwards;pointer-events:none}@keyframes petalFall{0%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}12%{opacity:1;transform:translate(calc(var(--fall-x)*.08),-10px) rotate(calc(var(--fall-r)*.12)) scale(1.02)}100%{opacity:0;transform:translate(var(--fall-x),360px) rotate(var(--fall-r)) scale(.94)}}
+.falling-petal{transform-box:fill-box;transform-origin:50% 88%;transition:none;will-change:transform,opacity;pointer-events:none}.falling-petal.removed{animation:petalFall 1.25s cubic-bezier(.45,.04,.76,.38) forwards;pointer-events:none}@keyframes petalFall{0%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}12%{opacity:1;transform:translate(calc(var(--fall-x)*.08),-10px) rotate(calc(var(--fall-r)*.12)) scale(1.02)}100%{opacity:0;transform:translate(var(--fall-x),360px) rotate(var(--fall-r)) scale(.94)}}
 .stamen{fill:#ffd788;stroke:#d89b55;stroke-width:1}
 .hearts{position:absolute;inset:0;pointer-events:none;z-index:3;overflow:hidden}
 .heart{position:absolute;width:17px;height:17px;opacity:0;animation:heartRise var(--dur,2.8s) ease-out forwards;filter:drop-shadow(0 0 7px #ff719b66)}
@@ -67,24 +67,42 @@ button{font:inherit}
 </head>
 <body>
 <main class="game-shell" id="game">
- <section class="screen" id="screen" aria-label="Interactive pixel-art tulip">
+ <section class="screen" id="screen" aria-label="Interactive rose petal garden">
   <div class="sky"></div><div class="pixel-stars"></div><div class="moon"></div>
   <div class="topline"><span>LOVE GARDEN</span><span>♡ SHARON</span></div>
-  <h1 class="title" id="title">LOVES ME</h1>
-  <div class="subtitle" id="subtitle">a little game, just for you</div>
+  <h1 class="title" id="title">A ROSE FOR YOU</h1>
+  <div class="subtitle" id="subtitle">one petal, one little promise</div>
   <div class="message" id="message" aria-live="polite">PICK A PETAL, MAKE A WISH</div>
   <div class="landscape" aria-hidden="true"><div class="mountain-back"></div><div class="mountain-front"></div><div class="ground"></div><div class="pixel-grass"></div></div>
-  <div class="flower-stage"><svg viewBox="0 0 300 360" role="img" aria-label="Pixel-art tulip with three naturally shaped petals" shape-rendering="crispEdges">
+  <div class="flower-stage"><svg viewBox="0 0 300 360" role="img" aria-label="A rose made from ten separate falling petals" shape-rendering="geometricPrecision">
 <defs>
- <mask id="hideBloom"><rect width="300" height="360" fill="white"/><path d="M68 51H90V58H101V69H111V82H119V98H127V116H134V136H140V157H145V179H151V202H168V198H184V192H199V184H211V174H219V160H224V141H228V119H232V51H210V42H172V49H128V42H90V51Z" fill="black"/></mask>
- <clipPath id="petalLeft"><path d="M68 51H90V58H101V69H111V82L118 64L151 202H139L126 197L113 192L101 184L89 174L81 160L76 141L72 119L68 51Z"/></clipPath>
- <clipPath id="petalCenter"><path d="M118 64L128 49V42H172V49L180 64L151 202Z"/></clipPath>
- <clipPath id="petalRight"><path d="M180 64L232 51V119L228 141L224 160L219 174L211 184L199 192L184 198L168 202L151 202L180 64Z"/></clipPath>
+ <linearGradient id="roseStem" x1="0" x2="1" y1="0" y2="0"><stop stop-color="#176b55"/><stop offset=".48" stop-color="#66c88b"/><stop offset="1" stop-color="#1b765c"/></linearGradient>
+ <linearGradient id="roseLeaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a4efaa"/><stop offset=".45" stop-color="#46bd79"/><stop offset="1" stop-color="#176c59"/></linearGradient>
+ <linearGradient id="roseOuterL" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff8fb9"/><stop offset=".48" stop-color="#e84483"/><stop offset="1" stop-color="#8c235d"/></linearGradient>
+ <linearGradient id="roseOuterR" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#ff9fc3"/><stop offset=".5" stop-color="#e83f7b"/><stop offset="1" stop-color="#8f2059"/></linearGradient>
+ <linearGradient id="roseMidL" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffb0ca"/><stop offset=".5" stop-color="#f45a91"/><stop offset="1" stop-color="#be245e"/></linearGradient>
+ <linearGradient id="roseMidR" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#ffc0d4"/><stop offset=".48" stop-color="#ed4d85"/><stop offset="1" stop-color="#a9235b"/></linearGradient>
+ <linearGradient id="roseInner" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd0df"/><stop offset=".48" stop-color="#ff7ca9"/><stop offset="1" stop-color="#c52c69"/></linearGradient>
+ <linearGradient id="roseInnerR" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#ffe0e8"/><stop offset=".45" stop-color="#fb77a3"/><stop offset="1" stop-color="#bd245f"/></linearGradient>
+ <linearGradient id="roseCore" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe2e9"/><stop offset=".5" stop-color="#ff85ad"/><stop offset="1" stop-color="#d63170"/></linearGradient>
 </defs>
-<image href="tulip.svg" x="-30" y="-8" width="360" height="360" preserveAspectRatio="xMidYMid meet" mask="url(#hideBloom)"/>
-<image class="falling-petal" data-petal="left" href="tulip.svg" x="-30" y="-8" width="360" height="360" clip-path="url(#petalLeft)" style="--fall-x:-86px;--fall-r:-38deg" preserveAspectRatio="xMidYMid meet"/>
-<image class="falling-petal" data-petal="center" href="tulip.svg" x="-30" y="-8" width="360" height="360" clip-path="url(#petalCenter)" style="--fall-x:0px;--fall-r:12deg" preserveAspectRatio="xMidYMid meet"/>
-<image class="falling-petal" data-petal="right" href="tulip.svg" x="-30" y="-8" width="360" height="360" clip-path="url(#petalRight)" style="--fall-x:86px;--fall-r:38deg" preserveAspectRatio="xMidYMid meet"/>
+<path d="M148 190 C149 226 147 266 151 332 L164 332 C160 281 158 235 157 190Z" fill="url(#roseStem)" stroke="#8fe0a3" stroke-width="2"/>
+<path d="M151 273 C119 252 91 251 63 264 C74 298 111 314 153 302Z" fill="url(#roseLeaf)" stroke="#8ce1a0" stroke-width="2"/>
+<path d="M153 287 C183 256 214 244 246 252 C239 289 205 315 159 310Z" fill="url(#roseLeaf)" stroke="#8ce1a0" stroke-width="2"/>
+<path d="M70 266 C101 278 126 289 150 300 M241 255 C210 276 184 294 158 307" fill="none" stroke="#d4ffc4" stroke-width="2" opacity=".6"/>
+<path d="M146 188 C122 185 112 171 108 153 C126 160 140 165 151 179Z" fill="#277e5b" stroke="#8bd68a" stroke-width="2"/>
+<path d="M153 188 C177 184 189 169 194 151 C176 158 163 165 149 179Z" fill="#277e5b" stroke="#8bd68a" stroke-width="2"/>
+<path d="M148 190 C138 172 139 158 150 143 C161 159 162 174 154 190Z" fill="#3a9d68" stroke="#a4e89a" stroke-width="2"/>
+<g class="falling-petal" data-pick="2"><path d="M150 185 C112 207 67 185 62 149 C57 116 77 87 107 79 C99 112 116 143 151 155 C139 167 140 178 150 185Z" fill="url(#roseOuterL)" stroke="#9e285f" stroke-width="2.5"/><path d="M80 124 C79 105 88 91 103 84 C99 103 101 119 112 132" fill="none" stroke="#ffd0df" stroke-width="3" opacity=".55"/></g>
+<g class="falling-petal" data-pick="3"><path d="M150 185 C188 207 233 185 238 149 C243 116 223 87 193 79 C201 112 184 143 149 155 C161 167 160 178 150 185Z" fill="url(#roseOuterR)" stroke="#99235b" stroke-width="2.5"/><path d="M220 124 C221 105 212 91 197 84 C201 103 199 119 188 132" fill="none" stroke="#ffd0df" stroke-width="3" opacity=".55"/></g>
+<g class="falling-petal" data-pick="4"><path d="M151 164 C132 148 109 129 100 102 C88 75 105 49 130 42 C151 35 166 54 166 76 C165 111 155 143 151 164Z" fill="url(#roseMidL)" stroke="#a72c61" stroke-width="2.5"/><path d="M111 76 C119 57 137 49 151 56" fill="none" stroke="#ffe0e9" stroke-width="3" opacity=".62"/></g>
+<g class="falling-petal" data-pick="5"><path d="M151 164 C147 140 136 109 136 78 C136 54 154 36 176 42 C201 49 214 75 202 102 C193 129 170 148 151 164Z" fill="url(#roseMidR)" stroke="#a72c61" stroke-width="2.5"/><path d="M191 76 C183 57 169 49 155 56" fill="none" stroke="#ffe0e9" stroke-width="3" opacity=".62"/></g>
+<g class="falling-petal" data-pick="0"><path d="M65 139 C69 175 94 198 132 202 C126 184 132 165 151 151 C119 148 96 132 89 111 C73 116 63 126 65 139Z" fill="url(#roseOuterL)" stroke="#962057" stroke-width="2.5"/><path d="M78 143 C87 170 105 185 128 188" fill="none" stroke="#ffbed2" stroke-width="3" opacity=".55"/></g>
+<g class="falling-petal" data-pick="1"><path d="M235 139 C231 175 206 198 168 202 C174 184 168 165 149 151 C181 148 204 132 211 111 C227 116 237 126 235 139Z" fill="url(#roseOuterR)" stroke="#962057" stroke-width="2.5"/><path d="M222 143 C213 170 195 185 172 188" fill="none" stroke="#ffbed2" stroke-width="3" opacity=".55"/></g>
+<g class="falling-petal" data-pick="6"><path d="M111 139 C96 119 102 91 123 77 C137 88 146 108 151 133 C146 153 133 169 116 174 C107 163 105 150 111 139Z" fill="url(#roseMidL)" stroke="#a42660" stroke-width="2.5"/><path d="M116 111 C121 96 130 91 138 95" fill="none" stroke="#ffe1e9" stroke-width="3" opacity=".7"/></g>
+<g class="falling-petal" data-pick="7"><path d="M189 139 C204 119 198 91 177 77 C163 88 154 108 149 133 C154 153 167 169 184 174 C193 163 195 150 189 139Z" fill="url(#roseInnerR)" stroke="#a42660" stroke-width="2.5"/><path d="M184 111 C179 96 170 91 162 95" fill="none" stroke="#ffe1e9" stroke-width="3" opacity=".7"/></g>
+<g class="falling-petal" data-pick="8"><path d="M125 105 C122 82 139 63 158 65 C181 65 192 86 182 108 C175 126 161 140 150 149 C137 137 124 122 125 105Z" fill="url(#roseInner)" stroke="#ad2a62" stroke-width="2.5"/><path d="M137 91 C143 76 158 72 169 79" fill="none" stroke="#fff0f2" stroke-width="3" opacity=".72"/></g>
+<g class="falling-petal" data-pick="9"><path d="M145 75 C162 66 180 79 178 96 C176 112 163 124 150 119 C137 114 135 100 144 91 C151 84 162 87 164 95 C166 102 159 107 153 103 C150 101 152 97 156 97 C151 92 144 99 148 106 C154 116 168 108 169 96 C170 83 158 77 148 83 C140 88 137 100 141 111 C128 102 130 83 145 75Z" fill="url(#roseCore)" stroke="#a9275f" stroke-width="2.5"/><path d="M147 82 C157 77 169 84 168 94" fill="none" stroke="#fff4f5" stroke-width="3" opacity=".8"/></g>
 </svg></div>
   <div class="hearts" id="hearts" aria-hidden="true"></div>
   <div class="footer"><button class="pick" id="pick">PICK A PETAL</button><button class="reset" id="reset">restart</button></div>
@@ -93,17 +111,17 @@ button{font:inherit}
 </main>
 <script>
 (()=>{
- const petalNodes=[...document.querySelectorAll('.falling-petal')];
+ const petalNodes=[...document.querySelectorAll('.falling-petal')].sort((a,b)=>Number(a.dataset.pick)-Number(b.dataset.pick));
  const message=document.getElementById('message'),title=document.getElementById('title'),subtitle=document.getElementById('subtitle');
  const pick=document.getElementById('pick'),reset=document.getElementById('reset'),instruction=document.getElementById('instruction');
  const screen=document.getElementById('screen'),hearts=document.getElementById('hearts');
- const lines=['I LOVE YOU','I LOVE YOU NOT','I LOVE YOU'];
+ const lines=petalNodes.map((_,i)=>(i%2===0||i===petalNodes.length-1)?'I LOVE YOU':'I LOVE YOU NOT');
  let index=0,finished=false;
  function setMessage(text){message.classList.remove('pop');void message.offsetWidth;message.textContent=text;message.classList.add('pop')}
  function heart(x,y,delay){const wrap=document.createElement('span');wrap.className='heart';wrap.style.left=x+'%';wrap.style.top=y+'%';wrap.style.animationDelay=delay+'s';wrap.style.setProperty('--dur',(2.5+Math.random()*1.3)+'s');wrap.style.setProperty('--drift',(-30+Math.random()*60)+'px');wrap.innerHTML='<svg viewBox="0 0 16 16"><path fill="#ff719e" d="M2 2h4v2h4V2h4v2h2v5h-2v2h-2v2H8v2H6v-2H4v-2H2V9H0V4h2z"/><path fill="#ffc0d3" d="M3 3h3v2H3zM10 3h3v2h-3z"/></svg>';hearts.appendChild(wrap);setTimeout(()=>wrap.remove(),5000)}
  function finale(){finished=true;screen.classList.add('final');title.textContent='IT WAS ALWAYS YOU';subtitle.textContent='my favourite answer';message.innerHTML='I LOVE YOU SO MUCH<br><span style="color:#ffb2cc">SHARON</span>';message.classList.add('pop');pick.textContent='YOU ARE LOVED';pick.disabled=true;instruction.textContent='and that is never changing';for(let i=0;i<22;i++)heart(36+Math.random()*28,47+Math.random()*13,i*.12)}
  function choose(){if(finished||index>=lines.length)return;petalNodes[index].classList.add('removed');setMessage(lines[index]);index++;if(index===lines.length){instruction.textContent='just one last thing...';setTimeout(finale,1450)}}
- function restart(){index=0;finished=false;screen.classList.remove('final');petalNodes.forEach(p=>p.classList.remove('removed'));hearts.innerHTML='';title.textContent='LOVES ME';subtitle.textContent='a little game, just for you';message.textContent='PICK A PETAL, MAKE A WISH';message.classList.remove('pop');pick.textContent='PICK A PETAL';pick.disabled=false;instruction.textContent='one petal at a time'}
+ function restart(){index=0;finished=false;screen.classList.remove('final');petalNodes.forEach(p=>p.classList.remove('removed'));hearts.innerHTML='';title.textContent='A ROSE FOR YOU';subtitle.textContent='one petal, one little promise';message.textContent='PICK A PETAL, MAKE A WISH';message.classList.remove('pop');pick.textContent='PICK A PETAL';pick.disabled=false;instruction.textContent='one petal at a time'}
  pick.addEventListener('click',choose);reset.addEventListener('click',restart);
 })();
 </script>
