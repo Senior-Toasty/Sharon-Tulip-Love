@@ -44,9 +44,9 @@ button{font:inherit}
 .stem{fill:#47a96b;stroke:#8ad58b;stroke-width:2;stroke-linejoin:miter}
 .leaf{fill:#2e9b61;stroke:#78cb80;stroke-width:2;stroke-linejoin:miter}
 .leaf-vein{fill:none;stroke:#9bdf98;stroke-width:2;opacity:.65}
-.tulip-petal{stroke:#df4383;stroke-width:3.5;stroke-linejoin:miter;transform-box:fill-box;transform-origin:50% 100%;filter:drop-shadow(1px 2px 0 #a92d68)}
+.tulip-petal{stroke:#d83f7a;stroke-width:3;stroke-linejoin:miter;transform-box:fill-box;transform-origin:50% 88%;filter:drop-shadow(1px 2px 0 #a92d68)}
 .p1{fill:#f66b9d}.p2{fill:#ed568e}.p3{fill:#ff8db2}.p4{fill:#d94783}.p5{fill:#ffacc5}.p6{fill:#ec6b9d}
-.tulip-petal.removed{animation:petalFall 1.05s cubic-bezier(.48,.02,.78,.35) forwards;pointer-events:none}@keyframes petalFall{0%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}18%{opacity:1;transform:translate(calc(var(--fall-x)*.18),-18px) rotate(calc(var(--fall-r)*.25)) scale(1.02)}100%{opacity:0;transform:translate(var(--fall-x),310px) rotate(var(--fall-r)) scale(.88)}}
+.tulip-petal.removed{animation:petalFall 1.25s cubic-bezier(.45,.04,.76,.38) forwards;pointer-events:none}@keyframes petalFall{0%{opacity:1;transform:translate(0,0) rotate(0) scale(1)}12%{opacity:1;transform:translate(calc(var(--fall-x)*.08),-10px) rotate(calc(var(--fall-r)*.12)) scale(1.02)}100%{opacity:0;transform:translate(var(--fall-x),360px) rotate(var(--fall-r)) scale(.94)}}
 .stamen{fill:#ffd788;stroke:#d89b55;stroke-width:1}
 .hearts{position:absolute;inset:0;pointer-events:none;z-index:3;overflow:hidden}
 .heart{position:absolute;width:17px;height:17px;opacity:0;animation:heartRise var(--dur,2.8s) ease-out forwards;filter:drop-shadow(0 0 7px #ff719b66)}
@@ -88,16 +88,17 @@ button{font:inherit}
      <path d="M137 286H163V295H137Z" fill="#63bfc3"/>
     </g>
     <g id="petalSet">
-     <!-- Each broad petal is a separate piece of the tulip and falls on its own. -->
-     <path class="tulip-petal p5" style="--fall-x:-105px;--fall-r:-42deg" d="M150 222H128V216H108V207H91V194H77V177H67V155H61V123H56V94H56V62H88V75H106V88H121V111H137V143H150Z"/>
-     <path class="tulip-petal p1" style="--fall-x:-76px;--fall-r:-32deg" d="M150 222H126V211H108V199H94V181H83V158H77V128H77V101H88V88H108V96H124V117H137V151H150Z"/>
-     <path class="tulip-petal p3" style="--fall-x:-45px;--fall-r:-22deg" d="M150 222H129V207H116V189H105V164H101V137H103V110H117V91H136V101H146V129H150Z"/>
-     <path class="tulip-petal p2" style="--fall-x:-15px;--fall-r:-10deg" d="M150 222H135V204H126V181H121V153H121V118H132V91H146V67H160V91H171V118H169V151H162V181H157V205H150Z"/>
-     <path class="tulip-petal p5" style="--fall-x:18px;--fall-r:12deg" d="M150 222H150V202H158V178H164V151H172V121H185V99H203V89H220V103H219V133H214V160H205V183H191V202H174V214H150Z"/>
-     <path class="tulip-petal p6" style="--fall-x:48px;--fall-r:24deg" d="M150 222H166V211H184V198H198V181H210V160H218V132H224V103H239V88H255V119H249V151H243V175H232V194H217V208H197V217H174V222Z"/>
-     <path class="tulip-petal p1" style="--fall-x:78px;--fall-r:35deg" d="M150 222H171V211H190V199H207V183H220V163H230V140H235V112H245V96H260V128H254V159H247V183H235V202H217V214H195V222Z"/>
-     <path class="tulip-petal p4" style="--fall-x:110px;--fall-r:48deg" d="M150 222H177V216H199V207H218V194H233V177H244V155H250V124H255V94H271V126H266V157H260V180H249V199H234V212H214V220H188V225H150Z"/>
-    </g>  </svg>
+     <!-- Back petals: upright side cups and the tall centre petal. -->
+     <path class="tulip-petal p4" style="--fall-x:-110px;--fall-r:-48deg" d="M150 221H124L105 216L88 206L74 191L65 174L60 153V116L53 108V72H65V55H91V68H108V83H122L134 105L143 132L150 164Z"/>
+     <path class="tulip-petal p2" style="--fall-x:-75px;--fall-r:-34deg" d="M150 221H130L115 211L104 196L97 177L94 153V122L87 112V83H99V65H121V81H136L145 104L150 132Z"/>
+     <path class="tulip-petal p5" style="--fall-x:-35px;--fall-r:-18deg" d="M150 221H137L130 203L128 179V143L124 121V85L135 74V49H149V32H164V49H178V74L189 85V121L185 143V179L178 203L164 221Z"/>
+     <path class="tulip-petal p2" style="--fall-x:75px;--fall-r:34deg" d="M150 221H170L185 211L196 196L203 177L206 153V122L213 112V83H201V65H179V81H164L155 104L150 132Z"/>
+     <path class="tulip-petal p4" style="--fall-x:110px;--fall-r:48deg" d="M150 221H176L195 216L212 206L226 191L235 174L240 153V116L247 108V72H235V55H209V68H192V83H178L166 105L157 132L150 164Z"/>
+     <!-- Front petals: broad overlapping panels that give the tulip its cup. -->
+     <path class="tulip-petal p1" style="--fall-x:-90px;--fall-r:-42deg" d="M150 221H124L105 216L88 206L74 191L68 174V147H80V137H96V148H108V165H122V181H139V198H150Z"/>
+     <path class="tulip-petal p6" style="--fall-x:90px;--fall-r:42deg" d="M150 221H176L195 216L212 206L226 191L232 174V147H220V137H204V148H192V165H178V181H161V198H150Z"/>
+     <path class="tulip-petal p3" style="--fall-x:8px;--fall-r:8deg" d="M124 207H110V194H102V180H100V162H112V151H127V159H139V169H150V158H163V151H178V162H200V180H198V194H190V207H176V215H124Z"/>
+    </g></svg>
   </div>
   <div class="hearts" id="hearts" aria-hidden="true"></div>
   <div class="footer"><button class="pick" id="pick">PICK A PETAL</button><button class="reset" id="reset">restart</button></div>
@@ -106,7 +107,7 @@ button{font:inherit}
 </main>
 <script>
 (()=>{
- const petalNodes=[...document.querySelectorAll('#petalSet .tulip-petal')];
+ const petalNodes=[...document.querySelectorAll('#petalSet .tulip-petal')].reverse();
  const message=document.getElementById('message'),title=document.getElementById('title'),subtitle=document.getElementById('subtitle');
  const pick=document.getElementById('pick'),reset=document.getElementById('reset'),instruction=document.getElementById('instruction');
  const screen=document.getElementById('screen'),hearts=document.getElementById('hearts');
@@ -115,7 +116,7 @@ button{font:inherit}
  function setMessage(text){message.classList.remove('pop');void message.offsetWidth;message.textContent=text;message.classList.add('pop')}
  function heart(x,y,delay){const wrap=document.createElement('span');wrap.className='heart';wrap.style.left=x+'%';wrap.style.top=y+'%';wrap.style.animationDelay=delay+'s';wrap.style.setProperty('--dur',(2.5+Math.random()*1.3)+'s');wrap.style.setProperty('--drift',(-30+Math.random()*60)+'px');wrap.innerHTML='<svg viewBox="0 0 16 16"><path fill="#ff719e" d="M2 2h4v2h4V2h4v2h2v5h-2v2h-2v2H8v2H6v-2H4v-2H2V9H0V4h2z"/><path fill="#ffc0d3" d="M3 3h3v2H3zM10 3h3v2h-3z"/></svg>';hearts.appendChild(wrap);setTimeout(()=>wrap.remove(),5000)}
  function finale(){finished=true;screen.classList.add('final');title.textContent='IT WAS ALWAYS YOU';subtitle.textContent='my favourite answer';message.innerHTML='I LOVE YOU SO MUCH<br><span style="color:#ffb2cc">SHARON</span>';message.classList.add('pop');pick.textContent='YOU ARE LOVED';pick.disabled=true;instruction.textContent='and that is never changing';for(let i=0;i<22;i++)heart(36+Math.random()*28,47+Math.random()*13,i*.12)}
- function choose(){if(finished||index>=petalNodes.length)return;petalNodes[index].classList.add('removed');setMessage(lines[index]);index++;if(index===petalNodes.length){instruction.textContent='just one last thing...';setTimeout(finale,850)}}
+ function choose(){if(finished||index>=petalNodes.length)return;petalNodes[index].classList.add('removed');setMessage(lines[index]);index++;if(index===petalNodes.length){instruction.textContent='just one last thing...';setTimeout(finale,1320)}}
  function restart(){index=0;finished=false;screen.classList.remove('final');petalNodes.forEach(p=>p.classList.remove('removed'));hearts.innerHTML='';title.textContent='LOVES ME';subtitle.textContent='a little game, just for you';message.textContent='PICK A PETAL, MAKE A WISH';message.classList.remove('pop');pick.textContent='PICK A PETAL';pick.disabled=false;instruction.textContent='one petal at a time'}
  pick.addEventListener('click',choose);reset.addEventListener('click',restart);
 })();
