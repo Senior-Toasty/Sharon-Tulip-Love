@@ -44,7 +44,7 @@ button{font:inherit}
 .stem{fill:#47a96b;stroke:#8ad58b;stroke-width:2;stroke-linejoin:miter}
 .leaf{fill:#2e9b61;stroke:#78cb80;stroke-width:2;stroke-linejoin:miter}
 .leaf-vein{fill:none;stroke:#9bdf98;stroke-width:2;opacity:.65}
-.tulip-petal{stroke:#ffb8cf;stroke-width:2;stroke-linejoin:miter;transform-box:fill-box;transform-origin:50% 100%;transition:opacity .28s,transform .75s cubic-bezier(.18,.72,.23,1)}
+.tulip-petal{stroke:#df4383;stroke-width:3.5;stroke-linejoin:miter;transform-box:fill-box;transform-origin:50% 100%;transition:opacity .28s,transform .75s cubic-bezier(.18,.72,.23,1)}
 .p1{fill:#f66b9d}.p2{fill:#ed568e}.p3{fill:#ff8db2}.p4{fill:#d94783}.p5{fill:#ffacc5}.p6{fill:#ec6b9d}
 .tulip-petal.removed{opacity:0;transform:translate(var(--tx),var(--ty)) rotate(var(--r)) scale(.78)}
 .stamen{fill:#ffd788;stroke:#d89b55;stroke-width:1}
@@ -75,28 +75,37 @@ button{font:inherit}
   <div class="message" id="message" aria-live="polite">PICK A PETAL, MAKE A WISH</div>
   <div class="landscape" aria-hidden="true"><div class="mountain-back"></div><div class="mountain-front"></div><div class="ground"></div><div class="pixel-grass"></div></div>
   <div class="flower-stage">
-   <svg viewBox="0 0 300 360" role="img" aria-label="A tulip made from pixel-art shapes">
-    <g id="stemGroup">
-     <path class="stem" d="M144 195h13v17h-5v17h5v17h-5v17h5v17h-5v17h-6v-17h-5v-17h5v-17h-5v-17h5v-17h-2z"/>
-     <path class="leaf" d="M148 269h-14v-8h-12v-10h-10v-12h-8v-13h17v7h12v8h10v10h8v12z"/>
-     <path class="leaf-vein" d="M145 265l-25-27"/>
-     <path class="leaf" d="M155 290h12v-8h11v-9h12v-10h10v-12h9v-12h-17v8h-11v8h-11v10h-8v12h-7z"/>
-     <path class="leaf-vein" d="M160 284l27-28"/>
+   <svg viewBox="0 0 300 360" role="img" aria-label="A layered pink pixel-art tulip with ten petals" shape-rendering="crispEdges">
+    <g id="foliage">
+     <path d="M145 338H112V327H98V315H84V303H70V289H58V274H46V258H36V241H29V207H43V220H59V230H76V241H93V254H109V269H125V286H139V307H149V338Z" fill="#426db0" stroke="#31518d" stroke-width="2"/>
+     <path d="M155 338H188V327H202V315H216V303H230V289H242V274H254V258H264V241H271V207H257V220H241V230H224V241H207V254H191V269H175V286H161V307H151V338Z" fill="#426db0" stroke="#31518d" stroke-width="2"/>
+     <path d="M141 327H115V315H101V303H87V291H74V277H62V261H50V246H42V222H52V233H68V243H85V255H101V269H117V284H131V301H143V319Z" fill="#76d5ac" stroke="#65b9c2" stroke-width="3"/>
+     <path d="M159 327H185V315H199V303H213V291H226V277H238V261H250V246H258V222H248V233H232V243H215V255H199V269H183V284H169V301H157V319Z" fill="#76d5ac" stroke="#65b9c2" stroke-width="3"/>
+     <path d="M46 223H53V233H69V244H85V256H101V270H117V284H132V301" fill="none" stroke="#b7f39c" stroke-width="5"/>
+     <path d="M254 223H247V233H231V244H215V256H199V270H183V284H168V301" fill="none" stroke="#b7f39c" stroke-width="5"/>
+     <path d="M137 206H163V340H137Z" fill="#4979b9" stroke="#315794" stroke-width="3"/>
+     <path d="M145 215H155V338H145Z" fill="#9de69c"/>
+     <path d="M137 286H163V295H137Z" fill="#63bfc3"/>
     </g>
+    <path class="flower-base" d="M91 218H78V207H67V193H59V117H51V96H43V51H83V62H103V75H119V55H137V43H165V55H183V64H200V75H218V62H237V51H257V96H249V117H241V193H233V207H222V218H205V226H95V218Z" fill="#d83c7b" stroke="#c93070" stroke-width="2"/>
     <g id="petalSet">
-     <path class="tulip-petal p4" style="--tx:-60px;--ty:-65px;--r:-42deg" d="M91 167h-8v-17h6v-16h9v-17h13v-11h18v13h-8v17h-9v16h-9v15z"/>
-     <path class="tulip-petal p2" style="--tx:-26px;--ty:-98px;--r:-24deg" d="M112 151h-8v-25h7v-23h10V84h15V70h18v14h-7v19h-8v23h-9v25z"/>
-     <path class="tulip-petal p5" style="--tx:4px;--ty:-112px;--r:4deg" d="M143 148h-8v-28h7V94h9V72h15V61h17v13h-7v23h-8v27h-8v24z"/>
-     <path class="tulip-petal p1" style="--tx:50px;--ty:-86px;--r:35deg" d="M176 153h-8v-22h8v-20h9v-16h14v11h10v16h-7v19h-9v18h-9v12h-8z"/>
-     <path class="tulip-petal p3" style="--tx:-64px;--ty:-10px;--r:-70deg" d="M91 170h-12v-12h-8v-18h9v-15h13v12h9v16h9v18h-10z"/>
-     <path class="tulip-petal p6" style="--tx:67px;--ty:-8px;--r:75deg" d="M194 173h9v-17h9v-16h9v-12h12v13h8v16h-8v18h-9v13h-12v-8h-18z"/>
-     <path class="tulip-petal p2" style="--tx:0px;--ty:-100px;--r:0deg" d="M119 168h-8v-16h9v-17h8v-21h12v-12h19v12h11v18h-7v21h-10v19h-26z"/>
-     <path class="tulip-petal p5" style="--tx:12px;--ty:-72px;--r:15deg" d="M135 165h-8v-20h8v-17h9v-16h12v11h9v17h-7v18h-8v14h-15z"/>
+     <path class="tulip-petal p1" style="--tx:-60px;--ty:-65px;--r:-42deg" d="M79 199H68V185H61V111H55V91H49V59H78V70H96V83H111V103H121V131H114V162H105V185H94V199Z"/>
+     <path class="tulip-petal p5" style="--tx:-35px;--ty:-90px;--r:-25deg" d="M104 180H93V165H85V118H92V96H108V81H127V93H139V116H132V142H123V166H115V180Z"/>
+     <path class="tulip-petal p2" style="--tx:-18px;--ty:-100px;--r:-18deg" d="M124 169H112V155H105V126H112V103H128V88H145V101H155V124H148V149H139V169Z"/>
+     <path class="tulip-petal p3" style="--tx:0px;--ty:-112px;--r:0deg" d="M139 155H128V135H121V95H130V73H143V58H166V70H179V91H186V123H178V145H166V159H151V155Z"/>
+     <path class="tulip-petal p5" style="--tx:22px;--ty:-100px;--r:18deg" d="M168 165H158V148H151V123H158V97H173V80H191V92H203V111H197V144H188V165H179Z"/>
+     <path class="tulip-petal p6" style="--tx:60px;--ty:-80px;--r:38deg" d="M190 197H179V183H172V160H181V134H190V107H205V90H223V76H242V62H251V94H245V116H238V185H230V199H216V207H198V197Z"/>
+     <path class="tulip-petal p2" style="--tx:-68px;--ty:-8px;--r:-70deg" d="M94 190H83V177H77V153H84V136H98V124H113V140H121V164H114V184H105V198H94Z"/>
+     <path class="tulip-petal p1" style="--tx:68px;--ty:-8px;--r:72deg" d="M205 191H194V179H186V158H194V137H208V125H224V138H232V160H225V181H217V196H205Z"/>
+     <path class="tulip-petal p4" style="--tx:-8px;--ty:-80px;--r:-8deg" d="M119 184H108V171H116V153H130V142H146V151H158V142H174V154H184V173H176V188H163V199H137V194H119Z"/>
+     <path class="tulip-petal p3" style="--tx:12px;--ty:-86px;--r:14deg" d="M143 164H132V151H139V130H151V116H164V127H173V145H166V164H156V174H145Z"/>
     </g>
     <g id="flowerDetails" aria-hidden="true">
-     <path d="M117 168h67v9h-8v8h-9v7h-34v-7h-9v-8h-7z" fill="#c93f79"/>
-     <path d="M133 180h39v8h-8v7h-23v-7h-8z" fill="#f18aaa"/>
-     <rect class="stamen" x="146" y="178" width="7" height="7"/><rect class="stamen" x="158" y="176" width="7" height="7"/>
+     <path d="M136 60H151V72H163V85H174V99H164V91H153V79H136Z" fill="#ffd0d9" opacity=".85"/>
+     <path d="M195 111H207V99H220V87H238V98H225V110H213V123H201Z" fill="#ffd0d9" opacity=".55"/>
+     <path d="M82 134H95V145H107V156H94V147H82Z" fill="#ffb8ca" opacity=".65"/>
+     <path d="M129 185H144V194H129Z" fill="#ffacc3" opacity=".8"/>
+     <path d="M157 187H172V195H157Z" fill="#ffc3d3" opacity=".75"/>
     </g>
    </svg>
   </div>
@@ -111,7 +120,7 @@ button{font:inherit}
  const message=document.getElementById('message'),title=document.getElementById('title'),subtitle=document.getElementById('subtitle');
  const pick=document.getElementById('pick'),reset=document.getElementById('reset'),instruction=document.getElementById('instruction');
  const screen=document.getElementById('screen'),hearts=document.getElementById('hearts');
- const lines=['I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU'];
+ const lines=['I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU'];
  let index=0,finished=false;
  function setMessage(text){message.classList.remove('pop');void message.offsetWidth;message.textContent=text;message.classList.add('pop')}
  function heart(x,y,delay){const wrap=document.createElement('span');wrap.className='heart';wrap.style.left=x+'%';wrap.style.top=y+'%';wrap.style.animationDelay=delay+'s';wrap.style.setProperty('--dur',(2.5+Math.random()*1.3)+'s');wrap.style.setProperty('--drift',(-30+Math.random()*60)+'px');wrap.innerHTML='<svg viewBox="0 0 16 16"><path fill="#ff719e" d="M2 2h4v2h4V2h4v2h2v5h-2v2h-2v2H8v2H6v-2H4v-2H2V9H0V4h2z"/><path fill="#ffc0d3" d="M3 3h3v2H3zM10 3h3v2h-3z"/></svg>';hearts.appendChild(wrap);setTimeout(()=>wrap.remove(),5000)}
