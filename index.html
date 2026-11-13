@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#10183d">
+<title>A little flower for Sharon</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 30%,#28376d,#10183d 48%,#05091c);color:#fff1d2;font-family:ui-monospace,"Courier New",monospace}
+.scene{width:min(100vw,520px);height:100svh;min-height:620px;max-height:850px;position:relative;overflow:hidden;background:linear-gradient(#101b46,#172b5b 62%,#12284b);isolation:isolate}
+.stars{position:absolute;inset:0;background-image:radial-gradient(2px 2px at 12% 14%,#fff 98%,transparent),radial-gradient(1px 1px at 29% 28%,#fff 98%,transparent),radial-gradient(2px 2px at 72% 12%,#fff 98%,transparent),radial-gradient(1px 1px at 86% 34%,#fff 98%,transparent),radial-gradient(1px 1px at 55% 22%,#fff 98%,transparent);background-size:230px 190px;opacity:.8}
+.moon{position:absolute;right:12%;top:13%;width:52px;height:52px;border-radius:50%;background:#fff2c6;box-shadow:0 0 24px #fff0bd88,0 0 65px #fff0bd33}
+h1{position:absolute;top:7%;width:100%;margin:0;text-align:center;color:#ff9fc5;font-size:clamp(24px,7vw,36px);letter-spacing:3px;text-shadow:3px 3px #6b3a83,0 0 18px #ff9fc577}
+.sub{position:absolute;top:16%;left:10%;width:80%;text-align:center;color:#d8e1ff;font-size:12px;line-height:1.6}
+.message{position:absolute;top:23%;left:7%;width:86%;text-align:center;min-height:62px;color:#fff4d8;font-size:clamp(17px,5vw,24px);line-height:1.4;text-shadow:2px 2px #17204d}
+.flower{position:absolute;left:50%;bottom:13%;width:230px;height:390px;transform:translateX(-50%)}svg{width:100%;height:100%;overflow:visible}.stem{fill:none;stroke:#56b86d;stroke-width:8;stroke-linecap:round}.leaf{fill:#278d55;stroke:#65c77b;stroke-width:2}.petal{fill:#f36f9d;stroke:#ffb1ca;stroke-width:2;transform-box:fill-box;transform-origin:center;transition:opacity .45s,transform .6s}.back{fill:#c94f85;stroke:#f58ab0;stroke-width:2}.gone{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--rot)) scale(.65)}
+.hills{position:absolute;bottom:0;left:-10%;width:120%;height:27%;background:#123b39;clip-path:polygon(0 35%,12% 24%,26% 39%,42% 15%,58% 35%,73% 12%,88% 31%,100% 20%,100% 100%,0 100%);z-index:-0}.hills:after{content:"";position:absolute;inset:35% 0 0;background:#0a292c}.grass{position:absolute;bottom:0;width:100%;height:17%;background:repeating-linear-gradient(100deg,transparent 0 12px,#6ab56a 13px 14px,transparent 15px 25px)}
+.controls{position:absolute;bottom:5%;left:0;width:100%;display:flex;justify-content:center;gap:10px;padding:0 18px}button{font:inherit;font-size:13px;color:#172044;background:#ffd5e4;border:2px solid #fff0f5;border-radius:5px;padding:13px 18px;box-shadow:0 4px 0 #a64f79;cursor:pointer}button:active{transform:translateY(3px);box-shadow:0 1px 0 #a64f79}.reset{background:#d8e4ff;box-shadow:0 4px 0 #647cae}.hint{position:absolute;bottom:1.5%;width:100%;text-align:center;font-size:9px;color:#b5c6e9;opacity:.8}.final{font-size:clamp(19px,5.4vw,27px);color:#ffb8d0}
+@media(max-height:700px){.flower{height:330px;bottom:12%}.message{top:21%}.sub{top:14%}.controls{bottom:4%}}
+</style></head>
+<body><main class="scene" aria-label="A tulip love game for Sharon"><div class="stars"></div><div class="moon"></div>
+<h1 id="heading">LOVES ME</h1><div class="sub">a tiny flower, with a very important answer</div><div class="message" id="message" aria-live="polite">Pick a tulip petal to begin...</div>
+<div class="flower"><svg viewBox="0 0 230 390" role="img" aria-label="A pink tulip drawn with SVG">
+<path class="stem" d="M115 175 C111 235 123 285 116 355"/><path class="leaf" d="M116 285 C70 253 42 268 48 303 C72 320 99 307 116 285Z"/><path class="leaf" d="M117 320 C151 278 184 286 181 316 C164 339 139 336 117 320Z"/>
+<path class="back" d="M78 117 Q63 57 91 42 Q107 67 115 104 Q122 53 143 42 Q166 62 151 119 Q137 145 115 150 Q91 145 78 117Z"/>
+<g id="petals">
+<path class="petal" d="M115 126 Q69 115 72 74 Q75 40 97 30 Q112 55 115 126Z" style="--dx:-65px;--dy:-42px;--rot:-55deg"/>
+<path class="petal" d="M115 126 Q91 75 111 29 Q133 14 145 43 Q146 86 115 126Z" style="--dx:12px;--dy:-65px;--rot:35deg"/>
+<path class="petal" d="M115 126 Q137 69 164 72 Q183 100 151 128 Q133 140 115 126Z" style="--dx:66px;--dy:-26px;--rot:70deg"/>
+<path class="petal" d="M115 126 Q66 135 62 105 Q57 84 72 74 Q96 93 115 126Z" style="--dx:-72px;--dy:8px;--rot:-90deg"/>
+<path class="petal" d="M115 126 Q125 88 151 84 Q170 105 145 130 Q130 139 115 126Z" style="--dx:70px;--dy:20px;--rot:90deg"/>
+<path class="petal" d="M115 126 Q91 105 91 78 Q102 55 115 62 Q127 91 115 126Z" style="--dx:0px;--dy:-75px;--rot:10deg"/></g>
+<path d="M87 123 Q114 143 144 123 Q139 161 115 169 Q91 158 87 123Z" fill="#e85c91" stroke="#ffb1ca" stroke-width="2"/><ellipse cx="115" cy="126" rx="8" ry="5" fill="#ffd46f"/></svg></div>
+<div class="hills"></div><div class="grass"></div><div class="controls"><button id="pick">Pick a petal ♡</button><button class="reset" id="reset">Start again</button></div><div class="hint" id="hint">one petal at a time • made with love</div></main>
+<script>(()=>{const petals=[...document.querySelectorAll('.petal')],message=document.getElementById('message'),pick=document.getElementById('pick'),hint=document.getElementById('hint'),heading=document.getElementById('heading');let index=0;const lines=['I love you','I love you not','I love you','I love you not','I love you','I love you not'];function choose(){if(index>=petals.length)return;petals[index].classList.add('gone');message.textContent=lines[index++];if(index===petals.length){setTimeout(()=>{message.innerHTML='I Love you so much<br><span class="final">Sharon ♡</span>';message.classList.add('final');heading.textContent='IT WAS ALWAYS YOU';pick.textContent='You are loved';pick.disabled=true;hint.textContent='the flower has made its decision'},650)}}function restart(){index=0;petals.forEach(p=>p.classList.remove('gone'));message.textContent='Pick a tulip petal to begin...';message.classList.remove('final');heading.textContent='LOVES ME';pick.textContent='Pick a petal ♡';pick.disabled=false;hint.textContent='one petal at a time • made with love'}pick.addEventListener('click',choose);document.getElementById('reset').addEventListener('click',restart)})();</script></body></html>
