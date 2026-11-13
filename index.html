@@ -75,7 +75,7 @@ button{font:inherit}
   <div class="message" id="message" aria-live="polite">PICK A PETAL, MAKE A WISH</div>
   <div class="landscape" aria-hidden="true"><div class="mountain-back"></div><div class="mountain-front"></div><div class="ground"></div><div class="pixel-grass"></div></div>
   <div class="flower-stage">
-   <svg viewBox="0 0 300 360" role="img" aria-label="A large layered pixel-art tulip with ten individually falling petals" shape-rendering="crispEdges">
+   <svg viewBox="0 0 300 360" role="img" aria-label="A classic cup-shaped pixel-art tulip with eight broad individually falling petals" shape-rendering="crispEdges">
     <g id="foliage">
      <path d="M145 338H112V327H98V315H84V303H70V289H58V274H46V258H36V241H29V207H43V220H59V230H76V241H93V254H109V269H125V286H139V307H149V338Z" fill="#426db0" stroke="#31518d" stroke-width="2"/>
      <path d="M155 338H188V327H202V315H216V303H230V289H242V274H254V258H264V241H271V207H257V220H241V230H224V241H207V254H191V269H175V286H161V307H151V338Z" fill="#426db0" stroke="#31518d" stroke-width="2"/>
@@ -88,18 +88,16 @@ button{font:inherit}
      <path d="M137 286H163V295H137Z" fill="#63bfc3"/>
     </g>
     <g id="petalSet">
-     <path class="tulip-petal p4" style="--fall-x:-105px;--fall-r:-48deg" d="M150 218H132V207H116V195H99V181H84V164H70V142H62V112H68V91H80V75H97V69H111V82H120V108H130V139H140V172H150Z"/>
-     <path class="tulip-petal p1" style="--fall-x:-82px;--fall-r:-35deg" d="M150 218H132V204H116V190H103V173H91V151H83V124H86V103H98V87H113V92H126V113H132V143H140V174H150Z"/>
-     <path class="tulip-petal p5" style="--fall-x:-55px;--fall-r:-24deg" d="M150 218H136V203H125V185H114V164H107V137H109V110H120V91H134V83H146V101H151V129H150V159Z"/>
-     <path class="tulip-petal p2" style="--fall-x:-28px;--fall-r:-12deg" d="M150 218H138V197H131V174H126V146H128V116H137V92H150V77H161V96H166V124H161V154H157V184H150Z"/>
-     <path class="tulip-petal p3" style="--fall-x:0px;--fall-r:5deg" d="M150 218H141V192H137V164H138V133H143V102H151V66H164V82H174V109H171V139H164V168H159V195H150Z"/>
-     <path class="tulip-petal p5" style="--fall-x:28px;--fall-r:15deg" d="M150 218H150V188H158V159H164V130H172V103H185V88H199V102H205V127H198V154H187V179H173V200H163V218Z"/>
-     <path class="tulip-petal p6" style="--fall-x:55px;--fall-r:26deg" d="M150 218H163V202H176V185H188V164H199V139H207V113H220V91H235V99H245V119H240V148H229V172H216V191H199V207H181V218Z"/>
-     <path class="tulip-petal p2" style="--fall-x:82px;--fall-r:38deg" d="M150 218H169V205H187V192H204V176H219V157H231V134H240V110H252V93H263V115H257V145H246V171H231V192H212V207H190V218Z"/>
-     <path class="tulip-petal p1" style="--fall-x:105px;--fall-r:52deg" d="M150 218H176V208H196V197H216V182H233V164H246V143H254V118H262V99H274V128H269V158H257V183H240V202H219V215H194V224H150Z"/>
-     <path class="tulip-petal p3" style="--fall-x:0px;--fall-r:-4deg" d="M150 218H137V194H130V166H133V133H140V103H150V55H162V76H172V105H168V139H161V170H155V196H150Z"/>
-    </g>
-   </svg>
+     <!-- Each broad petal is a separate piece of the tulip and falls on its own. -->
+     <path class="tulip-petal p5" style="--fall-x:-105px;--fall-r:-42deg" d="M150 222H128V216H108V207H91V194H77V177H67V155H61V123H56V94H56V62H88V75H106V88H121V111H137V143H150Z"/>
+     <path class="tulip-petal p1" style="--fall-x:-76px;--fall-r:-32deg" d="M150 222H126V211H108V199H94V181H83V158H77V128H77V101H88V88H108V96H124V117H137V151H150Z"/>
+     <path class="tulip-petal p3" style="--fall-x:-45px;--fall-r:-22deg" d="M150 222H129V207H116V189H105V164H101V137H103V110H117V91H136V101H146V129H150Z"/>
+     <path class="tulip-petal p2" style="--fall-x:-15px;--fall-r:-10deg" d="M150 222H135V204H126V181H121V153H121V118H132V91H146V67H160V91H171V118H169V151H162V181H157V205H150Z"/>
+     <path class="tulip-petal p5" style="--fall-x:18px;--fall-r:12deg" d="M150 222H150V202H158V178H164V151H172V121H185V99H203V89H220V103H219V133H214V160H205V183H191V202H174V214H150Z"/>
+     <path class="tulip-petal p6" style="--fall-x:48px;--fall-r:24deg" d="M150 222H166V211H184V198H198V181H210V160H218V132H224V103H239V88H255V119H249V151H243V175H232V194H217V208H197V217H174V222Z"/>
+     <path class="tulip-petal p1" style="--fall-x:78px;--fall-r:35deg" d="M150 222H171V211H190V199H207V183H220V163H230V140H235V112H245V96H260V128H254V159H247V183H235V202H217V214H195V222Z"/>
+     <path class="tulip-petal p4" style="--fall-x:110px;--fall-r:48deg" d="M150 222H177V216H199V207H218V194H233V177H244V155H250V124H255V94H271V126H266V157H260V180H249V199H234V212H214V220H188V225H150Z"/>
+    </g>  </svg>
   </div>
   <div class="hearts" id="hearts" aria-hidden="true"></div>
   <div class="footer"><button class="pick" id="pick">PICK A PETAL</button><button class="reset" id="reset">restart</button></div>
@@ -112,7 +110,7 @@ button{font:inherit}
  const message=document.getElementById('message'),title=document.getElementById('title'),subtitle=document.getElementById('subtitle');
  const pick=document.getElementById('pick'),reset=document.getElementById('reset'),instruction=document.getElementById('instruction');
  const screen=document.getElementById('screen'),hearts=document.getElementById('hearts');
- const lines=['I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU'];
+ const lines=['I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT','I LOVE YOU','I LOVE YOU NOT'];
  let index=0,finished=false;
  function setMessage(text){message.classList.remove('pop');void message.offsetWidth;message.textContent=text;message.classList.add('pop')}
  function heart(x,y,delay){const wrap=document.createElement('span');wrap.className='heart';wrap.style.left=x+'%';wrap.style.top=y+'%';wrap.style.animationDelay=delay+'s';wrap.style.setProperty('--dur',(2.5+Math.random()*1.3)+'s');wrap.style.setProperty('--drift',(-30+Math.random()*60)+'px');wrap.innerHTML='<svg viewBox="0 0 16 16"><path fill="#ff719e" d="M2 2h4v2h4V2h4v2h2v5h-2v2h-2v2H8v2H6v-2H4v-2H2V9H0V4h2z"/><path fill="#ffc0d3" d="M3 3h3v2H3zM10 3h3v2h-3z"/></svg>';hearts.appendChild(wrap);setTimeout(()=>wrap.remove(),5000)}
